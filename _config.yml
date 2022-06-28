@@ -102,4 +102,14 @@ theme: landscape
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/WUYUEZONG/wuyuezong.github.io.git
+  branch: [main]
+  token: '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'
+  message: [message]
+  name: [wuyuezong]
+  email: [w.yzong@outlook.com]
+  # extend_dirs: [extend directory]
+  ignore_hidden: false # default is true
+  ignore_pattern: regexp  # whatever file that matches the regexp will be ignored when deploying
+
