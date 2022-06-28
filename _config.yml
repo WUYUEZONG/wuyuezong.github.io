@@ -1,1 +1,28 @@
 theme: next
+language: zh-Hans
+#scheme: Muse
+#scheme: Mist
+scheme: Pisces
+menu:
+  home: /
+  archives: /archives
+  categories: /categories
+  tags: /tags
+  about: /about
+  # search: 
+  # commonweal: /404.html
+  # something: 
+
+menu_icons:
+  enable: true
+  # Icon Mapping.
+  home: home
+  about: user
+  categories: th
+  tags: tags
+  archives: archive
+  commonweal: heartbeat
+
+sidebar:
+  position: left
+  display: post
