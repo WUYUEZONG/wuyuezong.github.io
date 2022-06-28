@@ -104,7 +104,7 @@ theme: landscape
 deploy:
   type: git
   repo: https://github.com/WUYUEZONG/wuyuezong.github.io.git
-  branch: main
+  branch: gh-pages
   token: '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'
   message: [message]
   name: [wuyuezong]
