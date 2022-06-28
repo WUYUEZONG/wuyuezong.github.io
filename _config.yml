@@ -105,4 +105,4 @@ deploy:
   type: 'git'
   repo: https://github.com/WUYUEZONG/wuyuezong.github.io.git
   branch: main
-  token: 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
+  token: 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
