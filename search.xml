@@ -8,19 +8,26 @@
   <entry>
     <title>Hello World</title>
     <url>/2022/06/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post 3342&quot;</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h1 id="Hexo-GitPage-实践"><a href="#Hexo-GitPage-实践" class="headerlink" title="Hexo + GitPage 实践"></a>Hexo + GitPage 实践</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">操作系统：MacOS</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<div class="note info"><p>info</p></div>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<mark class="label default">操作系统：MacOS</mark>
+<mark class="label primary"> 操作系统：MacOS</mark>
+<mark class="label success">操作系统：MacOS</mark>
+<mark class="label info">操作系统：MacOS</mark>
+<mark class="label warning">操作系统：MacOS</mark>
+<mark class="label danger">操作系统：MacOS</mark>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<blockquote class="blockquote-center">
+<p>人生乃是一面镜子，<br>从镜子里认识自己，<br>我要称之为头等大事，<br>也只是我们追求的目的！</p>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+</blockquote>
+
+<p>参考阅读<br><a href="https://hexo.io/docs/">hexo文档</a></p>
+<blockquote>
+<p>这几天准备</p>
+</blockquote>
 ]]></content>
   </entry>
 </search>
