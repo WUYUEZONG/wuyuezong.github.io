@@ -8,23 +8,27 @@
   <entry>
     <title>Hello World</title>
     <url>/2022/06/29/hello-world/</url>
-    <content><![CDATA[<h1 id="Hexo-GitPage-实践"><a href="#Hexo-GitPage-实践" class="headerlink" title="Hexo + GitPage 实践"></a>Hexo + GitPage 实践</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">操作系统：MacOS</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h1 id="Hexo-GitPage-实践"><a href="#Hexo-GitPage-实践" class="headerlink" title="Hexo + GitPage 实践"></a>Hexo + GitPage 实践</h1><h2 id="Hexo-GitPage-实践-1"><a href="#Hexo-GitPage-实践-1" class="headerlink" title="Hexo + GitPage 实践"></a>Hexo + GitPage 实践</h2><h3 id="Hexo-GitPage-实践-2"><a href="#Hexo-GitPage-实践-2" class="headerlink" title="Hexo + GitPage 实践"></a>Hexo + GitPage 实践</h3><h4 id="Hexo-GitPage-实践-3"><a href="#Hexo-GitPage-实践-3" class="headerlink" title="Hexo + GitPage 实践"></a>Hexo + GitPage 实践</h4><h5 id="Hexo-GitPage-实践-4"><a href="#Hexo-GitPage-实践-4" class="headerlink" title="Hexo + GitPage 实践"></a>Hexo + GitPage 实践</h5><h6 id="Hexo-GitPage-实践-5"><a href="#Hexo-GitPage-实践-5" class="headerlink" title="Hexo + GitPage 实践"></a>Hexo + GitPage 实践</h6><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">操作系统：MacOS</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <div class="note info"><p>info</p></div>
 
-<mark class="label default">操作系统：MacOS</mark>
-<mark class="label primary"> 操作系统：MacOS</mark>
-<mark class="label success">操作系统：MacOS</mark>
-<mark class="label info">操作系统：MacOS</mark>
-<mark class="label warning">操作系统：MacOS</mark>
-<mark class="label danger">操作系统：MacOS</mark>
+<span class="label default">操作系统：MacOS</span>
+<span class="label primary"> 操作系统：MacOS</span>
+<span class="label success">操作系统：MacOS</span>
+<span class="label info">操作系统：MacOS</span>
+<span class="label warning">操作系统：MacOS</span>
+<span class="label danger">操作系统：MacOS</span>
 
 <blockquote class="blockquote-center">
-<p>人生乃是一面镜子，<br>从镜子里认识自己，<br>我要称之为头等大事，<br>也只是我们追求的目的！</p>
+            <i class="fa fa-quote-left"></i>
+            <p>人生乃是一面镜子，<br>从镜子里认识自己，<br>我要称之为头等大事，<br>也只是我们追求的目的！</p>
 
-</blockquote>
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
 
-<p>参考阅读<br><a href="https://hexo.io/docs/">hexo文档</a></p>
+<p><strong>参考阅读</strong><br>的发送过来撒了鸡蛋放辣椒<br>ldjfakldfjalskfjlsfjslf<br>fasldfjaldjfaljdsflafjljlsdjlfjaljfsflasljfalj<br>dfadlfjalfjsljlf</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ldjfakldfjalskfjlsfjslf</span><br><span class="line">fasldfjaldjfaljdsflafjljlsdjlfjaljfsflasljfalj</span><br><span class="line">dfadlfjalfjsljlf</span><br></pre></td></tr></table></figure>
+<p><a href="https://hexo.io/docs/">hexo文档</a></p>
 <blockquote>
 <p>这几天准备</p>
 </blockquote>
