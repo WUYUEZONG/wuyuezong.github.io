@@ -7,12 +7,8 @@ title: ZONE
 subtitle: ''
 description: ''
 keywords:
-author: WUYUEZONG
-language: 
-- zh
-- en
-- zh-tw
-
+author: wuyuezong
+language: zh-Hans
 timezone: ''
 
 # URL
@@ -102,15 +98,6 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
-
-pjax: true
-
-# Search
-search:
-  path: search.xml
-  field: post
-  content: true
-  format: html
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
