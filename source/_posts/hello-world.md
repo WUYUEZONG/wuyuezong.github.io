@@ -1,11 +1,17 @@
 ---
 title: Hello World
 ---
-### 1. 导入头文件
+
+## pthread
+
+### 导入头文件
+
 ```objectivec
 #import <pthread.h>
 ```
-### 2. 创建 `pthread_t` 对象以及使用
+
+### 创建 `pthread_t` 对象以及使用
+
 ```objectivec
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,13 +29,16 @@ void *run(void *param) {
     return NULL;
 }
 ```
+
 **`pthread_create` 函数参数说明**
+
 ```h
-int pthread_create(pthread_t _Nullable * _Nonnull __restrict,
-		const pthread_attr_t * _Nullable __restrict,
-		void * _Nullable (* _Nonnull)(void * _Nullable),
-		void * _Nullable __restrict);
+int pthread_create(pthread_t _Nullable * _Nonnull __restrict, 
+    const pthread_attr_t * _Nullable __restrict,
+    void * _Nullable (* _Nonnull)(void * _Nullable),
+    void * _Nullable __restrict);
 ```
+
 1. 表示线程对象，指向线程标识符的指针 `&thread`
 2. 表示线程属性，可赋值 `NULL`
 3. 表示函数指针，在 `thread` 线程中要执行的任务
@@ -46,3 +55,22 @@ int pthread_create(pthread_t _Nullable * _Nonnull __restrict,
 - `pthread_attr_getdetachstate()` 获取脱离状态的属性
 - `pthread_attr_destroy()` 删除线程的属性
 - `pthread_kill()` 向线程发送一个信号
+
+## NSThread
+
+`NSThread` 是苹果官方提供的，使用起来比 `pthread` 更加面向对象，简单易用，可以直接操作线程对象。不过也需要需要程序员自己管理线程的生命周期(主要是创建)，我们在开发的过程中偶尔使用 `NSThread` 。比如我们会经常调用`[NSThread currentThread]`来显示当前的进程信息。
+
+### 创建、启动线程
+
+```objectivec
+// 1. 创建线程
+NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
+// 2. 启动线程
+[thread start];    // 线程一启动，就会在线程thread中执行self的run方法
+// 新线程调用方法，里边为需要执行的任务
+- (void)run {
+    NSLog(@"%@", [NSThread currentThread]);
+}
+```
+
+**待更新... 暂时不想更新😭**
