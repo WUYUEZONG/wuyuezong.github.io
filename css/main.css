@@ -178,7 +178,7 @@ body {
   background: var(--body-bg-color);
   color: var(--text-color);
   font-family: 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 2;
 }
 @media (max-width: 991px) {
@@ -194,7 +194,7 @@ h4,
 h5,
 h6 {
   font-family: 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   line-height: 1.5;
   margin: 20px 0 15px;
 }
@@ -391,9 +391,11 @@ pre {
 }
 pre,
 code {
-  font-family: "PT Mono", Consolas, Monaco, Menlo, monospace;
+  font-weight: 200;
+  font-family: "Fira Code", "PT Mono", Monaco, Menlo;
 }
 code {
+  font-weight: 100;
   background: #eee;
   border-radius: 3px;
   color: #555;
@@ -1168,7 +1170,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffff3d;
+  background: #749dd7;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1682,7 +1684,7 @@ pre .javascript .function {
   padding-top: 40px;
 }
 .post-body {
-  font-weight: 300;
+  font-weight: 200;
 }
 @media (min-width: 992px) {
   .post-body {
@@ -1701,8 +1703,7 @@ pre .javascript .function {
 .post-body h5,
 .post-body h6 {
   padding-top: 10px;
-  font-weight: 300;
-  line-height: 1.1;
+  font-weight: 200;
 }
 .post-body h1 .header-anchor,
 .post-body h2 .header-anchor,
