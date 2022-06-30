@@ -11,6 +11,8 @@ tags:
 
 Mach-O格式全称为Mach Object文件格式的缩写，是MacOS或者iOS上可执行的程序格式，类似于Windows上的PE格式 (Portable Executable)，linux上的ELF格式 (Executable and Linking Format)。
 
+<!-- more -->
+
 **Mach-O文件的分类**
 
 - `Executable` 应用可执行文件
