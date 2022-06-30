@@ -160,6 +160,84 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wuyuezong.github.io/2022/06/30/center-core-mode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="wuyuezong">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZONE">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/30/center-core-mode/" class="post-title-link" itemprop="url">中间人模式 (CTMediator) 分析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-06-30 03:59:08" itemprop="dateCreated datePublished" datetime="2022-06-30T03:59:08+00:00">2022-06-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS%E5%BC%80%E5%8F%91/%E7%BB%84%E4%BB%B6%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">组件化</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><p>关于组件化开发，在我的理解里，它一直都是，应用主体去协调各个 <code>pod</code> 。</p>
+<p>理解：<br>如果在一个大型项目中，<br>首先根据项目去化分业务 (业务1， 业务2， 业务3，…)<br>每个业务给到开发人员，开发人员根据业务去开发相应的功能，那么这个过程中，肯定会有不同业务中的相识功能，就比如，业务1，网络请求用A库而业务2用的是B库，那么其实A库、B库能做的事情是一样的，选择较好的就行，所以就要提前制定规则，把应用分层，不至于造成这样的代码冗余，我的想法是分为三层：</p>
+<ul>
+<li>首先是<strong>基础模块</strong>，一般通用切必要的服务可以归类在这一层，比如<strong>网络和存储</strong>。</li>
+<li>其次是<strong>业务组件</strong>，就是单个UI层面的通用组件，它可以供各个业务模块使用。</li>
+<li>最后是<strong>业务层</strong>，他们是某一业务的完整功能，比如<strong>账号、支付、埋点</strong>等等。</li>
+</ul>
+<p>那么还有一个分工问题。应用层次为三层，是不是对应分人做就是？</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://wuyuezong.github.io/2022/06/30/link-symbol/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -184,7 +262,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-06-30 02:25:38" itemprop="dateCreated datePublished" datetime="2022-06-30T02:25:38+00:00">2022-06-30</time>
+              <time title="创建时间：2022-06-30 03:59:08" itemprop="dateCreated datePublished" datetime="2022-06-30T03:59:08+00:00">2022-06-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -208,29 +286,14 @@
 
       
           <h1 id="Mach-O"><a href="#Mach-O" class="headerlink" title="Mach-O"></a>Mach-O</h1><p>Mach-O格式全称为Mach Object文件格式的缩写，是MacOS或者iOS上可执行的程序格式，类似于Windows上的PE格式 (Portable Executable)，linux上的ELF格式 (Executable and Linking Format)。</p>
-<p><strong>Mach-O文件的分类</strong></p>
-<ul>
-<li><code>Executable</code> 应用可执行文件</li>
-<li><code>Dylib Library</code> 动态链接库（又称DSO或DLL）</li>
-<li><code>Static Library</code> 静态链接库</li>
-<li><code>Bundle</code> 不能被链接的Dylib，只能在运行时使用dlopen( )加载，可当做macOS的插件</li>
-<li><code>Relocatable Object File</code> 可重定向文件类型</li>
-</ul>
-<h2 id="Mach-O文件的组成"><a href="#Mach-O文件的组成" class="headerlink" title="Mach-O文件的组成"></a>Mach-O文件的组成</h2><p>Mach-O文件主要包括三部分内容： Header(头部)、Load Commands(加载命令)、Data(数据区)</p>
-<h3 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h3><p>指明了 CPU 架构、大小端序、文件类型、Load Commands 个数等一些基本信息，Headers 能帮助校验 Mach-O 合法性和定位文件的运行环境，64位架构为例，<a target="_blank" rel="noopener" href="https://opensource.apple.com/source/xnu/xnu-792/EXTERNAL_HEADERS/mach-o/loader.h">Header结构</a>定义如下</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> mach_header_64 &#123;</span><br><span class="line">    uint32_t    magic;        <span class="comment">/* mach magic number identifier 魔数，用于快速确认该文件用于64位还是32位 */</span></span><br><span class="line">    cpu_type_t    cputype;    <span class="comment">/* cpu specifier，CPU**类型，比如 arm */</span></span><br><span class="line">    cpu_subtype_t    cpusubtype;    <span class="comment">/* machine specifier，对应的具体类型，比如arm64、armv7 */</span></span><br><span class="line">    uint32_t    filetype;    <span class="comment">/* type of file，文件类型，比如可执行文件、库文件、Dsym文件，demo中是2 `MH_EXECUTE`，代表可执行文件*/</span></span><br><span class="line">    uint32_t    ncmds;        <span class="comment">/* number of load commands 加载命令条数 */</span></span><br><span class="line">    uint32_t    sizeofcmds;    <span class="comment">/* the size of all the load commands  所有加载命令的大小 */</span></span><br><span class="line">    uint32_t    flags;        <span class="comment">/* flags 标志位 */</span></span><br><span class="line">    uint32_t    reserved;    <span class="comment">/* reserved  保留字段 */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>filetype</strong></p>
-<ul>
-<li>OBJECT，指的是 .o 文件或者 .a 文件；</li>
-<li>EXECUTE，指的是 IPA 拆包后的文件；</li>
-<li>DYLIB，指的是 .dylib 或 .framework 文件；</li>
-<li>DYLINKER，指的是动态链接器；</li>
-<li>DSYM，指的是保存有符号信息用于分析闪退信息的文件。</li>
-</ul>
-<p><strong>待更新… 感觉还没学会😭</strong></p>
-<h1 id="LLVM-NM"><a href="#LLVM-NM" class="headerlink" title="LLVM-NM"></a>LLVM-NM</h1><p><strong>参考</strong><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7066791636205830181">了解Mach-O文件</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7045928743310721037">2</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/06/30/link-symbol/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -273,7 +336,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-06-30 02:25:38" itemprop="dateCreated datePublished" datetime="2022-06-30T02:25:38+00:00">2022-06-30</time>
+              <time title="创建时间：2022-06-30 03:59:08" itemprop="dateCreated datePublished" datetime="2022-06-30T03:59:08+00:00">2022-06-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -300,99 +363,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="pthread"><a href="#pthread" class="headerlink" title="pthread"></a>pthread</h2><h3 id="导入头文件"><a href="#导入头文件" class="headerlink" title="导入头文件"></a>导入头文件</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="string">&lt;pthread.h&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<h3 id="创建-pthread-t-对象以及使用"><a href="#创建-pthread-t-对象以及使用" class="headerlink" title="创建 pthread_t 对象以及使用"></a>创建 <code>pthread_t</code> 对象以及使用</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="type">void</span>)viewDidLoad &#123;</span><br><span class="line">    [<span class="variable language_">super</span> viewDidLoad];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 申明变量</span></span><br><span class="line">    pthread_t thread;</span><br><span class="line">    <span class="comment">// 开启现场，执行任务</span></span><br><span class="line">    pthread_create(&amp;thread, <span class="literal">NULL</span>, run, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="comment">// 设置子线程状态为 detach, 该线程运行结束后会自动释放所有资源</span></span><br><span class="line">    pthread_detach(thread);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *run(<span class="type">void</span> *param) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%@&quot;</span>, [<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong><code>pthread_create</code> 函数参数说明</strong></p>
-<figure class="highlight h"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">pthread_create</span><span class="params">(<span class="type">pthread_t</span> _Nullable * _Nonnull __restrict, </span></span><br><span class="line"><span class="params">    <span class="type">const</span> <span class="type">pthread_attr_t</span> * _Nullable __restrict,</span></span><br><span class="line"><span class="params">    <span class="type">void</span> * _Nullable (* _Nonnull)(<span class="type">void</span> * _Nullable),</span></span><br><span class="line"><span class="params">    <span class="type">void</span> * _Nullable __restrict)</span>;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>表示线程对象，指向线程标识符的指针 <code>&amp;thread</code></li>
-<li>表示线程属性，可赋值 <code>NULL</code></li>
-<li>表示函数指针，在 <code>thread</code> 线程中要执行的任务</li>
-<li>表示函数参数</li>
-</ol>
-<h3 id="pthread-其他相关方法"><a href="#pthread-其他相关方法" class="headerlink" title="pthread 其他相关方法"></a><code>pthread</code> 其他相关方法</h3><ul>
-<li><code>pthread_create()</code> 创建一个线程</li>
-<li><code>pthread_exit()</code> 终止当前线程</li>
-<li><code>pthread_cancel()</code> 中断另外一个线程的运行</li>
-<li><code>pthread_join()</code> 阻塞当前的线程，直到另外一个线程运行结束</li>
-<li><code>pthread_attr_init()</code> 初始化线程的属性</li>
-<li><code>pthread_attr_setdetachstate()</code> 设置脱离状态的属性（决定这个线程在终止时是否可以被结合）</li>
-<li><code>pthread_attr_getdetachstate()</code> 获取脱离状态的属性</li>
-<li><code>pthread_attr_destroy()</code> 删除线程的属性</li>
-<li><code>pthread_kill()</code> 向线程发送一个信号</li>
-</ul>
-<h2 id="NSThread"><a href="#NSThread" class="headerlink" title="NSThread"></a>NSThread</h2><p><code>NSThread</code> 是苹果官方提供的，使用起来比 <code>pthread</code> 更加面向对象，简单易用，可以直接操作线程对象。不过也需要需要程序员自己管理线程的生命周期(主要是创建)，我们在开发的过程中偶尔使用 <code>NSThread</code> 。比如我们会经常调用<code>[NSThread currentThread]</code>来显示当前的进程信息。</p>
-<h3 id="创建、启动线程"><a href="#创建、启动线程" class="headerlink" title="创建、启动线程"></a>创建、启动线程</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 创建线程</span></span><br><span class="line"><span class="built_in">NSThread</span> *thread = [[<span class="built_in">NSThread</span> alloc] initWithTarget:<span class="keyword">self</span> selector:<span class="keyword">@selector</span>(run) object:<span class="literal">nil</span>];</span><br><span class="line"><span class="comment">// 2. 启动线程</span></span><br><span class="line">[thread start];    <span class="comment">// 线程一启动，就会在线程thread中执行self的run方法</span></span><br><span class="line"><span class="comment">// 新线程调用方法，里边为需要执行的任务</span></span><br><span class="line">- (<span class="type">void</span>)run &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%@&quot;</span>, [<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>待更新… 暂时不想更新😭</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wuyuezong.github.io/2022/06/29/aDraft/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="wuyuezong">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZONE">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/29/aDraft/" class="post-title-link" itemprop="url">aDraft</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-06-29 09:29:46" itemprop="dateCreated datePublished" datetime="2022-06-29T09:29:46+00:00">2022-06-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-30 02:25:38" itemprop="dateModified" datetime="2022-06-30T02:25:38+00:00">2022-06-30</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="aDraft-for-Test"><a href="#aDraft-for-Test" class="headerlink" title="aDraft for Test"></a>aDraft for Test</h1>
+          <p>这里需要写摘要</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/06/30/pthred-nsthread/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -480,13 +459,13 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
