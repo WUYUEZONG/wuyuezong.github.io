@@ -24,7 +24,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Update Theme
-        run: update-theme
+        run: git submodule update --remote
       - name: Build
         run: npm run build
       - name: Deploy
