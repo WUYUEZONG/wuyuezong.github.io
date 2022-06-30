@@ -26,6 +26,12 @@ defaults write -g com.apple.mouse.scaling 10
 defaults read -g com.apple.mouse.scaling
 ```
 
+{% label default@ searchterm %}
+
+{% note success %}
+Any content (support inline tags too).
+{% endnote %}
+
 
 ----
 [工作笔记](../notebook/index.html)
