@@ -186,7 +186,7 @@ body {
   box-sizing: border-box;
   color: var(--text-color);
   font-family: Monda, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 1em;
+  font-size: 15px;
   line-height: 2;
   min-height: 100%;
   position: relative;
@@ -2540,7 +2540,7 @@ ul.breadcrumb li:last-child {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #4eb02a;
+  background: #77c3a1;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
