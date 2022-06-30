@@ -25,11 +25,8 @@ defaults write -g com.apple.mouse.scaling 10
 ```shell
 defaults read -g com.apple.mouse.scaling
 ```
-
-{% label default@ searchterm %}
-
-{% note success %}
-Any content (support inline tags too).
+{% note warning %}
+如果设置完去系统设置中修改鼠标速度，则命令设置的速度会失效
 {% endnote %}
 
 
