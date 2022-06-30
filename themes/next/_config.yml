@@ -120,8 +120,9 @@ menu:
   about: /about/ || fa fa-user
   tags: /tags/ || fa fa-tags
   categories: /categories/ || fa fa-th
+  life: /life/ || fa fa-play
   archives: /archives/ || fa fa-archive
-  #schedule: /schedule/ || fa fa-calendar
+  # schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
 
