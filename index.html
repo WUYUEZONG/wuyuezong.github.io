@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"wuyuezong.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"wuyuezong.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="website">
@@ -160,7 +160,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wuyuezong.github.io/2022/06/30/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://wuyuezong.github.io/2022/06/30/link-symbol/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -174,7 +174,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/06/30/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2022/06/30/link-symbol/" class="post-title-link" itemprop="url">链接与符号 Link&Symbol</a>
         </h2>
 
         <div class="post-meta">
@@ -184,7 +184,96 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-06-30 01:39:02" itemprop="dateCreated datePublished" datetime="2022-06-30T01:39:02+00:00">2022-06-30</time>
+              <time title="创建时间：2022-06-30 02:25:38" itemprop="dateCreated datePublished" datetime="2022-06-30T02:25:38+00:00">2022-06-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Mach-O"><a href="#Mach-O" class="headerlink" title="Mach-O"></a>Mach-O</h1><p>Mach-O格式全称为Mach Object文件格式的缩写，是MacOS或者iOS上可执行的程序格式，类似于Windows上的PE格式 (Portable Executable)，linux上的ELF格式 (Executable and Linking Format)。</p>
+<p><strong>Mach-O文件的分类</strong></p>
+<ul>
+<li><code>Executable</code> 应用可执行文件</li>
+<li><code>Dylib Library</code> 动态链接库（又称DSO或DLL）</li>
+<li><code>Static Library</code> 静态链接库</li>
+<li><code>Bundle</code> 不能被链接的Dylib，只能在运行时使用dlopen( )加载，可当做macOS的插件</li>
+<li><code>Relocatable Object File</code> 可重定向文件类型</li>
+</ul>
+<h2 id="Mach-O文件的组成"><a href="#Mach-O文件的组成" class="headerlink" title="Mach-O文件的组成"></a>Mach-O文件的组成</h2><p>Mach-O文件主要包括三部分内容： Header(头部)、Load Commands(加载命令)、Data(数据区)</p>
+<h3 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h3><p>指明了 CPU 架构、大小端序、文件类型、Load Commands 个数等一些基本信息，Headers 能帮助校验 Mach-O 合法性和定位文件的运行环境，64位架构为例，<a target="_blank" rel="noopener" href="https://opensource.apple.com/source/xnu/xnu-792/EXTERNAL_HEADERS/mach-o/loader.h">Header结构</a>定义如下</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> mach_header_64 &#123;</span><br><span class="line">    uint32_t    magic;        <span class="comment">/* mach magic number identifier 魔数，用于快速确认该文件用于64位还是32位 */</span></span><br><span class="line">    cpu_type_t    cputype;    <span class="comment">/* cpu specifier，CPU**类型，比如 arm */</span></span><br><span class="line">    cpu_subtype_t    cpusubtype;    <span class="comment">/* machine specifier，对应的具体类型，比如arm64、armv7 */</span></span><br><span class="line">    uint32_t    filetype;    <span class="comment">/* type of file，文件类型，比如可执行文件、库文件、Dsym文件，demo中是2 `MH_EXECUTE`，代表可执行文件*/</span></span><br><span class="line">    uint32_t    ncmds;        <span class="comment">/* number of load commands 加载命令条数 */</span></span><br><span class="line">    uint32_t    sizeofcmds;    <span class="comment">/* the size of all the load commands  所有加载命令的大小 */</span></span><br><span class="line">    uint32_t    flags;        <span class="comment">/* flags 标志位 */</span></span><br><span class="line">    uint32_t    reserved;    <span class="comment">/* reserved  保留字段 */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>filetype</strong></p>
+<ul>
+<li>OBJECT，指的是 .o 文件或者 .a 文件；</li>
+<li>EXECUTE，指的是 IPA 拆包后的文件；</li>
+<li>DYLIB，指的是 .dylib 或 .framework 文件；</li>
+<li>DYLINKER，指的是动态链接器；</li>
+<li>DSYM，指的是保存有符号信息用于分析闪退信息的文件。</li>
+</ul>
+<p><strong>待更新… 感觉还没学会😭</strong></p>
+<h1 id="LLVM-NM"><a href="#LLVM-NM" class="headerlink" title="LLVM-NM"></a>LLVM-NM</h1><p><strong>参考</strong><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7066791636205830181">了解Mach-O文件</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7045928743310721037">2</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wuyuezong.github.io/2022/06/30/pthred-nsthread/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="wuyuezong">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZONE">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/30/pthred-nsthread/" class="post-title-link" itemprop="url">pthread / NSThread</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-06-30 02:25:38" itemprop="dateCreated datePublished" datetime="2022-06-30T02:25:38+00:00">2022-06-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,95 +347,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wuyuezong.github.io/2022/06/30/link-symbol/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="wuyuezong">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZONE">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/06/30/link-symbol/" class="post-title-link" itemprop="url">链接与符号 Link&Symbol</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-06-30 01:39:02" itemprop="dateCreated datePublished" datetime="2022-06-30T01:39:02+00:00">2022-06-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Mach-O"><a href="#Mach-O" class="headerlink" title="Mach-O"></a>Mach-O</h1><p>Mach-O格式全称为Mach Object文件格式的缩写，是MacOS或者iOS上可执行的程序格式，类似于Windows上的PE格式 (Portable Executable)，linux上的ELF格式 (Executable and Linking Format)。</p>
-<p><strong>Mach-O文件的分类</strong></p>
-<ul>
-<li><code>Executable</code> 应用可执行文件</li>
-<li><code>Dylib Library</code> 动态链接库（又称DSO或DLL）</li>
-<li><code>Static Library</code> 静态链接库</li>
-<li><code>Bundle</code> 不能被链接的Dylib，只能在运行时使用dlopen( )加载，可当做macOS的插件</li>
-<li><code>Relocatable Object File</code> 可重定向文件类型</li>
-</ul>
-<h2 id="Mach-O文件的组成"><a href="#Mach-O文件的组成" class="headerlink" title="Mach-O文件的组成"></a>Mach-O文件的组成</h2><p>Mach-O文件主要包括三部分内容： Header(头部)、Load Commands(加载命令)、Data(数据区)</p>
-<h3 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h3><p>指明了 CPU 架构、大小端序、文件类型、Load Commands 个数等一些基本信息，Headers 能帮助校验 Mach-O 合法性和定位文件的运行环境，64位架构为例，<a target="_blank" rel="noopener" href="https://opensource.apple.com/source/xnu/xnu-792/EXTERNAL_HEADERS/mach-o/loader.h">Header结构</a>定义如下</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> mach_header_64 &#123;</span><br><span class="line">    uint32_t    magic;        <span class="comment">/* mach magic number identifier 魔数，用于快速确认该文件用于64位还是32位 */</span></span><br><span class="line">    cpu_type_t    cputype;    <span class="comment">/* cpu specifier，CPU**类型，比如 arm */</span></span><br><span class="line">    cpu_subtype_t    cpusubtype;    <span class="comment">/* machine specifier，对应的具体类型，比如arm64、armv7 */</span></span><br><span class="line">    uint32_t    filetype;    <span class="comment">/* type of file，文件类型，比如可执行文件、库文件、Dsym文件，demo中是2 `MH_EXECUTE`，代表可执行文件*/</span></span><br><span class="line">    uint32_t    ncmds;        <span class="comment">/* number of load commands 加载命令条数 */</span></span><br><span class="line">    uint32_t    sizeofcmds;    <span class="comment">/* the size of all the load commands  所有加载命令的大小 */</span></span><br><span class="line">    uint32_t    flags;        <span class="comment">/* flags 标志位 */</span></span><br><span class="line">    uint32_t    reserved;    <span class="comment">/* reserved  保留字段 */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p><strong>filetype</strong></p>
-<ul>
-<li>OBJECT，指的是 .o 文件或者 .a 文件；</li>
-<li>EXECUTE，指的是 IPA 拆包后的文件；</li>
-<li>DYLIB，指的是 .dylib 或 .framework 文件；</li>
-<li>DYLINKER，指的是动态链接器；</li>
-<li>DSYM，指的是保存有符号信息用于分析闪退信息的文件。</li>
-</ul>
-<p><strong>待更新… 感觉还没学会😭</strong></p>
-<h1 id="LLVM-NM"><a href="#LLVM-NM" class="headerlink" title="LLVM-NM"></a>LLVM-NM</h1><p><strong>参考</strong><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7066791636205830181">了解Mach-O文件</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7045928743310721037">2</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://wuyuezong.github.io/2022/06/29/aDraft/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -378,7 +378,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-30 01:39:02" itemprop="dateModified" datetime="2022-06-30T01:39:02+00:00">2022-06-30</time>
+                <time title="修改时间：2022-06-30 02:25:38" itemprop="dateModified" datetime="2022-06-30T02:25:38+00:00">2022-06-30</time>
               </span>
 
           
@@ -491,6 +491,14 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/WUYUEZONG" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;WUYUEZONG" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lenswyz@gmail.com" title="E-Mail → mailto:lenswyz@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
 
 
 
