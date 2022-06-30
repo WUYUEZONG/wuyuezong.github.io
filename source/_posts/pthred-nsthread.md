@@ -1,5 +1,5 @@
 ---
-title: Hello World
+title: pthread / NSThread
 categories: 
 - iOS开发
 - iOS线程
