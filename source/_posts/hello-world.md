@@ -1,5 +1,12 @@
 ---
 title: Hello World
+categories: 
+- iOS开发
+- iOS线程
+tags:
+- iOS开发
+- OC
+- 线程
 ---
 
 ## pthread

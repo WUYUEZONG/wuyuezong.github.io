@@ -1,5 +1,10 @@
 ---
 title: 链接与符号 Link&Symbol
+categories: 
+- iOS开发
+tags:
+- iOS开发
+- Mach-O
 ---
 
 # Mach-O
