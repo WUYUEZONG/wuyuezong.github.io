@@ -23,6 +23,8 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
+      - name: Update Theme
+        run: update-theme
       - name: Build
         run: npm run build
       - name: Deploy
