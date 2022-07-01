@@ -71,19 +71,19 @@
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><p>要了解iOS签名，首先得从加密入手，了解<strong>对称加密</strong>、<strong>非对称加密</strong>、<strong>公钥密码</strong>、<strong>单向散列函数</strong>等名词，这些名词一抛出，可能你云里雾里了，但是不急，学习是需要过程的，下面对这些名词一一介绍。</p>
 <span id="more"></span>
 
-<p>在学之前我们先通过简单模型理解为什么要加密？A给B发送消息，那么如果有不法分子就想知道A发给B是什么内容，那么就会产生<strong>窃听</strong><br><img src="/../images/ios-signing/1.png" alt="窃听"></p>
+<p>在学之前我们先通过简单模型理解为什么要加密？A给B发送消息，那么如果有不法分子就想知道A发给B是什么内容，那么就会产生<strong>窃听</strong><br><img src="/../images/ios-signing/1.svg" alt="窃听"></p>
 <p><strong>对称加密</strong></p>
 <p>加密和解密的密钥相同即为对称加密。它的特点是：<strong>加密解密快、传输不安全</strong>。</p>
-<p><img src="/../images/ios-signing/2.png" alt="对称加密"></p>
+<p><img src="/../images/ios-signing/2.svg" alt="对称加密"></p>
 <p><strong>非对称加密(公钥加密)</strong><br>加密和解密的密钥不同即为非对称加密。<strong>加密解密较慢，相比对称加密更安全</strong>。</p>
-<p><strong>公钥密码</strong><br>公钥密码中包含一对密码：加密密钥、解密密钥(公钥，私钥)。公钥是可公开的密钥。<br>公钥加密是为了解决密钥配送问题，通过简单模型理解：<br><img src="/../images/ios-signing/3.png" alt="解决密钥配送问题"></p>
+<p><strong>公钥密码</strong><br>公钥密码中包含一对密码：加密密钥、解密密钥(公钥，私钥)。公钥是可公开的密钥。<br>公钥加密是为了解决密钥配送问题，通过简单模型理解：<br><img src="/../images/ios-signing/3.svg" alt="解决密钥配送问题"></p>
 <p>B生成密钥对，并把公钥发送给A，A通过 B的公钥加密消息得到密文，然后发送给B ，B得到密文，通过自己的私钥解密密文就得到了消息。<br>整个过程没有私钥的泄漏，所以数据传输是安全的，但是想一下：<br><strong>B接收到的消息，真的就是A发送的吗？</strong></p>
 <h1 id="混合密码系统-Hybrid-Cryptosystem"><a href="#混合密码系统-Hybrid-Cryptosystem" class="headerlink" title="混合密码系统(Hybrid Cryptosystem)"></a>混合密码系统(Hybrid Cryptosystem)</h1><p>同时结合对称加密的快的有点和非对称加密安全的优点的加密方式。<br>在混合密码系统中，会多出一个会话密钥(session key)，它用于加密和解密消息（对称加密），结合上面的例子，B给的公钥，用来加密会话密钥A同时发送，会话密钥加密的消息和公钥加密的会话密钥给B，那么 B则通过私钥解密得到会话密钥，在用会话密钥解密密文得到消息。</p>
 <h1 id="单向散列函数"><a href="#单向散列函数" class="headerlink" title="单向散列函数"></a>单向散列函数</h1><p>单向散列函数，可以根据根据消息内容计算出散列值，散列值的长度和消息的长度无关，无论消息是1bit、10M、100G，单向散列函数都会计算出固定长度的散列值。</p>
-<p><img src="/../images/ios-signing/4.png" alt="单向散列函数"></p>
+<p><img src="/../images/ios-signing/4.svg" alt="单向散列函数"></p>
 <p><strong>特点</strong></p>
 <p>根据任意长度的消息，计算出固定长度的散列值<br>计算速度快，能快速计算出散列值<br>消息不同，散列值也不同（哪怕只有1bit的区别也会产生完全不同的散列值）<br>具备单向性（散列值无法还原为原始文件）</p>
-<h2 id="如何防止数据被篡改"><a href="#如何防止数据被篡改" class="headerlink" title="如何防止数据被篡改"></a>如何防止数据被篡改</h2><p><strong>本地模型</strong><br><img src="/../images/ios-signing/5.png" alt="如何防止数据被篡改本地"><br><strong>网络模型</strong><br><a href="https://www.realvnc.com/en/connect/download/vnc/">https://www.realvnc.com/en/connect/download/vnc/</a><br><img src="/../images/ios-signing/6.png" alt="如何防止数据被篡改网络"></p>
+<h2 id="如何防止数据被篡改"><a href="#如何防止数据被篡改" class="headerlink" title="如何防止数据被篡改"></a>如何防止数据被篡改</h2><p><strong>本地模型</strong><br><img src="/../images/ios-signing/5.svg" alt="如何防止数据被篡改本地"><br><strong>网络模型</strong><br><a href="https://www.realvnc.com/en/connect/download/vnc/">https://www.realvnc.com/en/connect/download/vnc/</a><br><img src="/../images/ios-signing/6.svg" alt="如何防止数据被篡改网络"></p>
 <h1 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h1><p>了解了单向散列函数，就可以理解数字签名，就可以解答之前<span class="hint--info hint--rounded hint--top" data-hint="B接收到的消息，真的就是A发送的吗？" ontouchstart>遗留的问题</span>。数字签名就是消息发送者（A）通过私钥加密消息的散列值的到的结果。接受者则（B）可以通过，A的公钥解密签名的到散列值，同时计算的到收到的消息的散列值，如果相等，则确认是（A）发送的消息。</p>
 <p><img src="/"></p>
 <div class="note info no-icon"><p>要注意的是，数字签名不能保证消息的机密性，它是一种验证手段，可能确保消息的来源和内容的真实性（验证散列值）。</p>
