@@ -43,11 +43,7 @@
   <entry>
     <title>iOS签名机制</title>
     <url>/2022/06/30/ios-signing/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><span class="hint--info hint--rounded hint--top" data-hint="hint_text" ontouchstart>body_text</span>
-<div class="note primary"><h4 id="Primary-Header"><a href="#Primary-Header" class="headerlink" title="Primary Header"></a>Primary Header</h4><p><strong>Welcome</strong> to <a href="https://hexo.io/">Hexo!</a></p>
-</div>
-
-<p>要了解iOS签名，首先得从加密入手，了解<strong>对称加密</strong>、<strong>非对称加密</strong>、<strong>公钥密码</strong>、<strong>单向散列函数</strong>等名词，这些名词一抛出，可能你云里雾里了，但是不急，学习是需要过程的，下面对这些名词一一介绍。</p>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><p>要了解iOS签名，首先得从加密入手，了解<strong>对称加密</strong>、<strong>非对称加密</strong>、<strong>公钥密码</strong>、<strong>单向散列函数</strong>等名词，这些名词一抛出，可能你云里雾里了，但是不急，学习是需要过程的，下面对这些名词一一介绍。</p>
 <span id="more"></span>
 
 
