@@ -25,7 +25,9 @@ defaults write -g com.apple.mouse.scaling 10
 ```shell
 defaults read -g com.apple.mouse.scaling
 ```
-> **BUT, 如果设置完去系统设置中修改鼠标速度，则命令设置的速度会失效**
+{% note warning %}
+BUT, 如果设置完去系统设置中修改鼠标速度，则命令设置的速度会失效
+{% endnote %}
 
 ----
 [工作笔记](../notebook/index.html)

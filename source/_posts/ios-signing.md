@@ -9,11 +9,6 @@ tags:
 - iOS签名机制
 ---
 
-{% hint 'body_text' 'hint_text' %}
-{% note primary %}
-#### Primary Header
-**Welcome** to [Hexo!](https://hexo.io)
-{% endnote %}
 
 要了解iOS签名，首先得从加密入手，了解**对称加密**、**非对称加密**、**公钥密码**、**单向散列函数**等名词，这些名词一抛出，可能你云里雾里了，但是不急，学习是需要过程的，下面对这些名词一一介绍。
 
