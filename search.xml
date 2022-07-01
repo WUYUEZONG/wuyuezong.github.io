@@ -3,7 +3,7 @@
   <entry>
     <title>生物认证 TouchID/FaceID</title>
     <url>/2022/06/30/authentication-biometrics/</url>
-    <content><![CDATA[<h1 id="事前准备"><a href="#事前准备" class="headerlink" title="事前准备"></a>事前准备</h1><p>引入相关的库</p>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="事前准备"><a href="#事前准备" class="headerlink" title="事前准备"></a>事前准备</h1><p>引入相关的库</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">LocalAuthentication</span><br></pre></td></tr></table></figure>
 <p><img src="/../images/LocalAuthentication.png" alt="LocalAuthentication"></p>
 <p>引入头文件</p>
@@ -21,8 +21,8 @@
   </entry>
   <entry>
     <title>中间人模式 (CTMediator) 分析</title>
-    <url>/2022/06/30/center-core-mode/</url>
-    <content><![CDATA[<h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><p>关于组件化开发，在我的理解里，它一直都是，应用主体去协调各个 <code>pod</code> 。</p>
+    <url>/2022/07/01/center-core-mode/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><p>关于组件化开发，在我的理解里，它一直都是，应用主体去协调各个 <code>pod</code> 。</p>
 <p>理解：<br>如果在一个大型项目中，<br>首先根据项目去化分业务 (业务1， 业务2， 业务3，…)<br>每个业务给到开发人员，开发人员根据业务去开发相应的功能，那么这个过程中，肯定会有不同业务中的相识功能，就比如，业务1，网络请求用A库而业务2用的是B库，那么其实A库、B库能做的事情是一样的，选择较好的就行，所以就要提前制定规则，把应用分层，不至于造成这样的代码冗余，我的想法是分为三层：</p>
 <ul>
 <li>首先是<strong>基础模块</strong>，一般通用切必要的服务可以归类在这一层，比如<strong>网络和存储</strong>。</li>
@@ -43,7 +43,11 @@
   <entry>
     <title>iOS签名机制</title>
     <url>/2022/06/30/ios-signing/</url>
-    <content><![CDATA[<p>要了解iOS签名，首先得从加密入手，了解<strong>对称加密</strong>、<strong>非对称加密</strong>、<strong>公钥密码</strong>、<strong>单向散列函数</strong>等名词，这些名词一抛出，可能你云里雾里了，但是不急，学习是需要过程的，下面对这些名词一一介绍。</p>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><span class="hint--info hint--rounded hint--top" data-hint="hint_text" ontouchstart>body_text</span>
+<div class="note primary"><h4 id="Primary-Header"><a href="#Primary-Header" class="headerlink" title="Primary Header"></a>Primary Header</h4><p><strong>Welcome</strong> to <a href="https://hexo.io/">Hexo!</a></p>
+</div>
+
+<p>要了解iOS签名，首先得从加密入手，了解<strong>对称加密</strong>、<strong>非对称加密</strong>、<strong>公钥密码</strong>、<strong>单向散列函数</strong>等名词，这些名词一抛出，可能你云里雾里了，但是不急，学习是需要过程的，下面对这些名词一一介绍。</p>
 <span id="more"></span>
 
 
@@ -94,8 +98,8 @@
   </entry>
   <entry>
     <title>链接与符号 Link&amp;Symbol</title>
-    <url>/2022/06/30/link-symbol/</url>
-    <content><![CDATA[<h1 id="Mach-O"><a href="#Mach-O" class="headerlink" title="Mach-O"></a>Mach-O</h1><p>Mach-O格式全称为Mach Object文件格式的缩写，是MacOS或者iOS上可执行的程序格式，类似于Windows上的PE格式 (Portable Executable)，linux上的ELF格式 (Executable and Linking Format)。</p>
+    <url>/2022/07/01/link-symbol/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="Mach-O"><a href="#Mach-O" class="headerlink" title="Mach-O"></a>Mach-O</h1><p>Mach-O格式全称为Mach Object文件格式的缩写，是MacOS或者iOS上可执行的程序格式，类似于Windows上的PE格式 (Portable Executable)，linux上的ELF格式 (Executable and Linking Format)。</p>
 <span id="more"></span>
 
 <p><strong>Mach-O文件的分类</strong></p>
@@ -131,8 +135,8 @@
   </entry>
   <entry>
     <title>pthread / NSThread</title>
-    <url>/2022/06/30/pthred-nsthread/</url>
-    <content><![CDATA[<p>这里需要写摘要</p>
+    <url>/2022/07/01/pthred-nsthread/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><p>这里需要写摘要</p>
 <span id="more"></span>
 <h2 id="pthread"><a href="#pthread" class="headerlink" title="pthread"></a>pthread</h2><h3 id="导入头文件"><a href="#导入头文件" class="headerlink" title="导入头文件"></a>导入头文件</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="meta">#import <span class="string">&lt;pthread.h&gt;</span></span></span><br></pre></td></tr></table></figure>
 
