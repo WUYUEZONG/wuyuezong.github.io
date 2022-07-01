@@ -77,8 +77,8 @@
 <p><img src="/../images/ios-signing/2.png" alt="对称加密"></p>
 <p><strong>非对称加密(公钥加密)</strong><br>加密和解密的密钥不同即为非对称加密。<strong>加密解密较慢，相比对称加密更安全</strong>。</p>
 <p><strong>公钥密码</strong><br>公钥密码中包含一对密码：加密密钥、解密密钥(公钥，私钥)。公钥是可公开的密钥。<br>公钥加密是为了解决密钥配送问题，通过简单模型理解：<br><img src="/../images/ios-signing/3.png" alt="解决密钥配送问题"></p>
-<p>B 生成密钥对，并把公钥发送给 A，A 通过 B 的公钥加密消息得到密文，然后发送给 B ，B 得到密文，通过自己的私钥解密密文就得到了消息。<br>整个过程没有私钥的泄漏，所以数据传输是安全的，但是想一下：<br><strong>B接收到的消息，真的就是A发送的吗？</strong></p>
-<h1 id="混合密码系统-Hybrid-Cryptosystem"><a href="#混合密码系统-Hybrid-Cryptosystem" class="headerlink" title="混合密码系统(Hybrid Cryptosystem)"></a>混合密码系统(Hybrid Cryptosystem)</h1><p>同时结合对称加密的快的有点和非对称加密安全的优点的加密方式。<br>在混合密码系统中，会多出一个会话密钥（session key），它用于加密和解密消息（对称加密），结合上面的例子，B 给的公钥，用来加密会话密钥，A 同时发送，会话密钥加密的消息和公钥加密的会话密钥给 B ，那么 B 则通过私钥解密得到会话密钥，在用会话密钥解密密文得到消息。</p>
+<p>B生成密钥对，并把公钥发送给A，A通过 B的公钥加密消息得到密文，然后发送给B ，B得到密文，通过自己的私钥解密密文就得到了消息。<br>整个过程没有私钥的泄漏，所以数据传输是安全的，但是想一下：<br><strong>B接收到的消息，真的就是A发送的吗？</strong></p>
+<h1 id="混合密码系统-Hybrid-Cryptosystem"><a href="#混合密码系统-Hybrid-Cryptosystem" class="headerlink" title="混合密码系统(Hybrid Cryptosystem)"></a>混合密码系统(Hybrid Cryptosystem)</h1><p>同时结合对称加密的快的有点和非对称加密安全的优点的加密方式。<br>在混合密码系统中，会多出一个会话密钥(session key)，它用于加密和解密消息（对称加密），结合上面的例子，B给的公钥，用来加密会话密钥A同时发送，会话密钥加密的消息和公钥加密的会话密钥给B，那么 B则通过私钥解密得到会话密钥，在用会话密钥解密密文得到消息。</p>
 <h1 id="单向散列函数"><a href="#单向散列函数" class="headerlink" title="单向散列函数"></a>单向散列函数</h1><p>单向散列函数，可以根据根据消息内容计算出散列值，散列值的长度和消息的长度无关，无论消息是1bit、10M、100G，单向散列函数都会计算出固定长度的散列值。</p>
 <p><img src="/../images/ios-signing/4.png" alt="单向散列函数"></p>
 <p><strong>特点</strong></p>
