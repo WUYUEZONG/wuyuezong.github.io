@@ -20,30 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wuyuezong.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="这里需要写摘要">
+    <meta name="description" content="组件化关于组件化开发，在我的理解里，它一直都是，应用主体去协调各个 pod 。 理解：如果在一个大型项目中，首先根据项目去化分业务 (业务1， 业务2， 业务3，…)每个业务给到开发人员，开发人员根据业务去开发相应的功能，那么这个过程中，肯定会有不同业务中的相识功能，就比如，业务1，网络请求用A库而业务2用的是B库，那么其实A库、B库能做的事情是一样的，选择较好的就行，所以就要提前制定规则，把应用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pthread &#x2F; NSThread">
-<meta property="og:url" content="https://wuyuezong.github.io/2022/07/01/pthred-nsthread/index.html">
+<meta property="og:title" content="中间人模式 (CTMediator) 分析">
+<meta property="og:url" content="https://wuyuezong.github.io/2022/07/04/center-core-mode/index.html">
 <meta property="og:site_name" content="ZONE">
-<meta property="og:description" content="这里需要写摘要">
+<meta property="og:description" content="组件化关于组件化开发，在我的理解里，它一直都是，应用主体去协调各个 pod 。 理解：如果在一个大型项目中，首先根据项目去化分业务 (业务1， 业务2， 业务3，…)每个业务给到开发人员，开发人员根据业务去开发相应的功能，那么这个过程中，肯定会有不同业务中的相识功能，就比如，业务1，网络请求用A库而业务2用的是B库，那么其实A库、B库能做的事情是一样的，选择较好的就行，所以就要提前制定规则，把应用">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-01T16:28:42.015Z">
-<meta property="article:modified_time" content="2022-07-01T16:28:42.015Z">
+<meta property="article:published_time" content="2022-07-04T01:27:43.870Z">
+<meta property="article:modified_time" content="2022-07-04T01:27:43.870Z">
 <meta property="article:author" content="wuyuezong">
-<meta property="article:tag" content="OC">
-<meta property="article:tag" content="iOS开发">
-<meta property="article:tag" content="线程">
+<meta property="article:tag" content="中间人模式">
+<meta property="article:tag" content="CTMediator">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://wuyuezong.github.io/2022/07/01/pthred-nsthread/">
+<link rel="canonical" href="https://wuyuezong.github.io/2022/07/04/center-core-mode/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wuyuezong.github.io/2022/07/01/pthred-nsthread/","path":"2022/07/01/pthred-nsthread/","title":"pthread / NSThread"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wuyuezong.github.io/2022/07/04/center-core-mode/","path":"2022/07/04/center-core-mode/","title":"中间人模式 (CTMediator) 分析"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>pthread / NSThread | ZONE</title>
+<title>中间人模式 (CTMediator) 分析 | ZONE</title>
   
 
 
@@ -119,7 +118,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#pthread"><span class="nav-number">1.</span> <span class="nav-text">pthread</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">导入头文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-pthread-t-%E5%AF%B9%E8%B1%A1%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">创建 pthread_t 对象以及使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pthread-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">pthread 其他相关方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NSThread"><span class="nav-number">2.</span> <span class="nav-text">NSThread</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E3%80%81%E5%90%AF%E5%8A%A8%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.1.</span> <span class="nav-text">创建、启动线程</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">组件化</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -190,7 +189,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wuyuezong.github.io/2022/07/01/pthred-nsthread/">
+    <link itemprop="mainEntityOfPage" href="https://wuyuezong.github.io/2022/07/04/center-core-mode/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,12 +202,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="pthread / NSThread | ZONE">
+      <meta itemprop="name" content="中间人模式 (CTMediator) 分析 | ZONE">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          pthread / NSThread
+          中间人模式 (CTMediator) 分析
         </h1>
 
         <div class="post-meta-container">
@@ -219,7 +218,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-07-01 16:28:42" itemprop="dateCreated datePublished" datetime="2022-07-01T16:28:42+00:00">2022-07-01</time>
+      <time title="创建时间：2022-07-04 01:27:43" itemprop="dateCreated datePublished" datetime="2022-07-04T01:27:43+00:00">2022-07-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -231,7 +230,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/iOS%E5%BC%80%E5%8F%91/iOS%E7%BA%BF%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">iOS线程</span></a>
+          <a href="/categories/iOS%E5%BC%80%E5%8F%91/%E7%BB%84%E4%BB%B6%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">组件化</span></a>
         </span>
     </span>
 
@@ -245,36 +244,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><p>这里需要写摘要</p>
-<span id="more"></span>
-<h2 id="pthread"><a href="#pthread" class="headerlink" title="pthread"></a>pthread</h2><h3 id="导入头文件"><a href="#导入头文件" class="headerlink" title="导入头文件"></a>导入头文件</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="string">&lt;pthread.h&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<h3 id="创建-pthread-t-对象以及使用"><a href="#创建-pthread-t-对象以及使用" class="headerlink" title="创建 pthread_t 对象以及使用"></a>创建 <code>pthread_t</code> 对象以及使用</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="type">void</span>)viewDidLoad &#123;</span><br><span class="line">    [<span class="variable language_">super</span> viewDidLoad];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 申明变量</span></span><br><span class="line">    pthread_t thread;</span><br><span class="line">    <span class="comment">// 开启现场，执行任务</span></span><br><span class="line">    pthread_create(&amp;thread, <span class="literal">NULL</span>, run, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="comment">// 设置子线程状态为 detach, 该线程运行结束后会自动释放所有资源</span></span><br><span class="line">    pthread_detach(thread);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *run(<span class="type">void</span> *param) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%@&quot;</span>, [<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong><code>pthread_create</code> 函数参数说明</strong></p>
-<figure class="highlight h"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">pthread_create</span><span class="params">(<span class="type">pthread_t</span> _Nullable * _Nonnull __restrict, </span></span><br><span class="line"><span class="params">    <span class="type">const</span> <span class="type">pthread_attr_t</span> * _Nullable __restrict,</span></span><br><span class="line"><span class="params">    <span class="type">void</span> * _Nullable (* _Nonnull)(<span class="type">void</span> * _Nullable),</span></span><br><span class="line"><span class="params">    <span class="type">void</span> * _Nullable __restrict)</span>;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>表示线程对象，指向线程标识符的指针 <code>&amp;thread</code></li>
-<li>表示线程属性，可赋值 <code>NULL</code></li>
-<li>表示函数指针，在 <code>thread</code> 线程中要执行的任务</li>
-<li>表示函数参数</li>
-</ol>
-<h3 id="pthread-其他相关方法"><a href="#pthread-其他相关方法" class="headerlink" title="pthread 其他相关方法"></a><code>pthread</code> 其他相关方法</h3><ul>
-<li><code>pthread_create()</code> 创建一个线程</li>
-<li><code>pthread_exit()</code> 终止当前线程</li>
-<li><code>pthread_cancel()</code> 中断另外一个线程的运行</li>
-<li><code>pthread_join()</code> 阻塞当前的线程，直到另外一个线程运行结束</li>
-<li><code>pthread_attr_init()</code> 初始化线程的属性</li>
-<li><code>pthread_attr_setdetachstate()</code> 设置脱离状态的属性（决定这个线程在终止时是否可以被结合）</li>
-<li><code>pthread_attr_getdetachstate()</code> 获取脱离状态的属性</li>
-<li><code>pthread_attr_destroy()</code> 删除线程的属性</li>
-<li><code>pthread_kill()</code> 向线程发送一个信号</li>
+        <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><p>关于组件化开发，在我的理解里，它一直都是，应用主体去协调各个 <code>pod</code> 。</p>
+<p>理解：<br>如果在一个大型项目中，<br>首先根据项目去化分业务 (业务1， 业务2， 业务3，…)<br>每个业务给到开发人员，开发人员根据业务去开发相应的功能，那么这个过程中，肯定会有不同业务中的相识功能，就比如，业务1，网络请求用A库而业务2用的是B库，那么其实A库、B库能做的事情是一样的，选择较好的就行，所以就要提前制定规则，把应用分层，不至于造成这样的代码冗余，我的想法是分为三层：</p>
+<ul>
+<li>首先是<strong>基础模块</strong>，一般通用切必要的服务可以归类在这一层，比如<strong>网络和存储</strong>。</li>
+<li>其次是<strong>业务组件</strong>，就是单个UI层面的通用组件，它可以供各个业务模块使用。</li>
+<li>最后是<strong>业务层</strong>，他们是某一业务的完整功能，比如<strong>账号、支付、埋点</strong>等等。</li>
 </ul>
-<h2 id="NSThread"><a href="#NSThread" class="headerlink" title="NSThread"></a>NSThread</h2><p><code>NSThread</code> 是苹果官方提供的，使用起来比 <code>pthread</code> 更加面向对象，简单易用，可以直接操作线程对象。不过也需要需要程序员自己管理线程的生命周期(主要是创建)，我们在开发的过程中偶尔使用 <code>NSThread</code> 。比如我们会经常调用<code>[NSThread currentThread]</code>来显示当前的进程信息。</p>
-<h3 id="创建、启动线程"><a href="#创建、启动线程" class="headerlink" title="创建、启动线程"></a>创建、启动线程</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 创建线程</span></span><br><span class="line"><span class="built_in">NSThread</span> *thread = [[<span class="built_in">NSThread</span> alloc] initWithTarget:<span class="keyword">self</span> selector:<span class="keyword">@selector</span>(run) object:<span class="literal">nil</span>];</span><br><span class="line"><span class="comment">// 2. 启动线程</span></span><br><span class="line">[thread start];    <span class="comment">// 线程一启动，就会在线程thread中执行self的run方法</span></span><br><span class="line"><span class="comment">// 新线程调用方法，里边为需要执行的任务</span></span><br><span class="line">- (<span class="type">void</span>)run &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%@&quot;</span>, [<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>待更新… 暂时不想更新😭</strong></p>
+<p>那么还有一个分工问题。应用层次为三层，是不是对应分人做就是？</p>
 
     </div>
 
@@ -284,23 +261,19 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/OC/" rel="tag"># OC</a>
-              <a href="/tags/iOS%E5%BC%80%E5%8F%91/" rel="tag"># iOS开发</a>
-              <a href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag"># 线程</a>
+              <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%A8%A1%E5%BC%8F/" rel="tag"># 中间人模式</a>
+              <a href="/tags/CTMediator/" rel="tag"># CTMediator</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/07/01/rn-flex-layout/" rel="prev" title="React Native Flexbox">
-                  <i class="fa fa-chevron-left"></i> React Native Flexbox
+                <a href="/2022/07/04/high-performance-autolayout/" rel="prev" title="高性能的AutoLayout">
+                  <i class="fa fa-chevron-left"></i> 高性能的AutoLayout
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/07/01/link-symbol/" rel="next" title="链接与符号 Link&Symbol">
-                  链接与符号 Link&Symbol <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
