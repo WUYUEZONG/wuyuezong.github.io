@@ -85,7 +85,7 @@
 <p>根据任意长度的消息，计算出固定长度的散列值<br>计算速度快，能快速计算出散列值<br>消息不同，散列值也不同（哪怕只有1bit的区别也会产生完全不同的散列值）<br>具备单向性（散列值无法还原为原始文件）</p>
 <h2 id="如何防止数据被篡改"><a href="#如何防止数据被篡改" class="headerlink" title="如何防止数据被篡改"></a>如何防止数据被篡改</h2><p><strong>本地模型</strong><br><img src="/../images/ios-signing/5.png" alt="如何防止数据被篡改本地"><br><strong>网络模型</strong><br><a href="https://www.realvnc.com/en/connect/download/vnc/">https://www.realvnc.com/en/connect/download/vnc/</a><br><img src="/../images/ios-signing/6.png" alt="如何防止数据被篡改网络"></p>
 <h1 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h1><p>了解了单向散列函数，就可以理解数字签名，就可以解答之前<span class="hint--info hint--rounded hint--top" data-hint="B接收到的消息，真的就是A发送的吗？" ontouchstart>遗留的问题</span>。数字签名就是消息发送者（A）通过私钥加密消息的散列值的到的结果。接受者则（B）可以通过，A的公钥解密签名的到散列值，同时计算的到收到的消息的散列值，如果相等，则确认是（A）发送的消息。</p>
-<p><img src="/"></p>
+<p><img src="/../images/ios-signing/7.png" alt="数字签名"></p>
 <div class="note info no-icon"><p>要注意的是，数字签名不能保证消息的机密性，它是一种验证手段，可能确保消息的来源和内容的真实性（验证散列值）。</p>
 </div> 
 
