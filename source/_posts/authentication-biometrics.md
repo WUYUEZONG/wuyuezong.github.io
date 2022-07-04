@@ -10,11 +10,18 @@ tags:
 ---
 
 # 事前准备
+
 添加权限请求描述: e.g. "App需要TouchID或FaceID权限，来验证使用者是否是手机所有者"
 ```
 Privacy - Face ID Usage Description
 ```
+OR
+```
+NSFaceIDUsageDescription
+```
+
 引入相关的库
+
 ```
 LocalAuthentication
 ```
