@@ -19,14 +19,14 @@ date: 2022-06-30 09:11:10
 
 - 6年iOS开发经验(Objective-C / Swift)；
 - 能够独立开发应用，有一定的架构思维；
-- 堆内存管理、多线程编程、runtime、性能优化等技术有一定的了解；
+- 对内存管理、多线程编程、runtime、性能优化等技术有一定的了解；
 - 熟练使用xib、storyboard或代码自动布局；
 - 乐于接受新事物新语言，并有足够的学习动力；
 - 熟练使用MacOS、Xcode开发工具、证书生成、应用上架发布等；
 - svn、git代码管理；
 - 能够简单使用ReactNative、Flutter写界面；
 - 拥有[个人博客](https://wuyuezong.github.io)、[Gitbook](https://wuyuezong.gitbook.io/xue-xi-objectivec-yu-yan/)
-- 有一定的审美；
+- 有一定的审美能力；
 
 # 工作经历
 
