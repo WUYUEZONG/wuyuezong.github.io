@@ -20,30 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wuyuezong.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="这里需要写摘要">
+    <meta name="description" content="整理中…">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pthread &#x2F; NSThread">
-<meta property="og:url" content="https://wuyuezong.github.io/2022/07/06/pthred-nsthread/index.html">
+<meta property="og:title" content="iOS Runloop">
+<meta property="og:url" content="https://wuyuezong.github.io/2022/07/06/runloop/index.html">
 <meta property="og:site_name" content="ZONE">
-<meta property="og:description" content="这里需要写摘要">
+<meta property="og:description" content="整理中…">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-06T15:54:26.866Z">
 <meta property="article:modified_time" content="2022-07-06T15:54:26.866Z">
 <meta property="article:author" content="wuyuezong">
-<meta property="article:tag" content="OC">
-<meta property="article:tag" content="iOS开发">
-<meta property="article:tag" content="线程">
+<meta property="article:tag" content="runloop">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://wuyuezong.github.io/2022/07/06/pthred-nsthread/">
+<link rel="canonical" href="https://wuyuezong.github.io/2022/07/06/runloop/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wuyuezong.github.io/2022/07/06/pthred-nsthread/","path":"2022/07/06/pthred-nsthread/","title":"pthread / NSThread"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wuyuezong.github.io/2022/07/06/runloop/","path":"2022/07/06/runloop/","title":"iOS Runloop"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>pthread / NSThread | ZONE</title>
+<title>iOS Runloop | ZONE</title>
   
 
 
@@ -119,7 +117,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#pthread"><span class="nav-number">1.</span> <span class="nav-text">pthread</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">导入头文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-pthread-t-%E5%AF%B9%E8%B1%A1%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">创建 pthread_t 对象以及使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pthread-%E5%85%B6%E4%BB%96%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">pthread 其他相关方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NSThread"><span class="nav-number">2.</span> <span class="nav-text">NSThread</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E3%80%81%E5%90%AF%E5%8A%A8%E7%BA%BF%E7%A8%8B"><span class="nav-number">2.1.</span> <span class="nav-text">创建、启动线程</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B4%E7%90%86%E4%B8%AD%E2%80%A6"><span class="nav-number">1.</span> <span class="nav-text">整理中…</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RunLoop%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">RunLoop运行机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E7%BA%BF%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">主线程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%80%E4%BB%A5%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E7%BA%BF%E7%A8%8B%E4%BF%9D%E6%B4%BB"><span class="nav-number">4.</span> <span class="nav-text">所以如何进行线程保活?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%8E%A7%E5%88%B6RunLoop"><span class="nav-number">5.</span> <span class="nav-text">如何控制RunLoop</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RunLoop%E8%BF%98%E8%A7%A3%E5%86%B3%E5%93%AA%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">RunLoop还解决哪些问题？</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -190,7 +188,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wuyuezong.github.io/2022/07/06/pthred-nsthread/">
+    <link itemprop="mainEntityOfPage" href="https://wuyuezong.github.io/2022/07/06/runloop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -203,12 +201,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="pthread / NSThread | ZONE">
+      <meta itemprop="name" content="iOS Runloop | ZONE">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          pthread / NSThread
+          iOS Runloop
         </h1>
 
         <div class="post-meta-container">
@@ -229,10 +227,6 @@
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/iOS%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a>
         </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/iOS%E5%BC%80%E5%8F%91/iOS%E7%BA%BF%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">iOS线程</span></a>
-        </span>
     </span>
 
   
@@ -245,36 +239,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><p>这里需要写摘要</p>
-<span id="more"></span>
-<h2 id="pthread"><a href="#pthread" class="headerlink" title="pthread"></a>pthread</h2><h3 id="导入头文件"><a href="#导入头文件" class="headerlink" title="导入头文件"></a>导入头文件</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="string">&lt;pthread.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+        <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="整理中…"><a href="#整理中…" class="headerlink" title="整理中…"></a>整理中…</h1><span id="more"></span>
 
-<h3 id="创建-pthread-t-对象以及使用"><a href="#创建-pthread-t-对象以及使用" class="headerlink" title="创建 pthread_t 对象以及使用"></a>创建 <code>pthread_t</code> 对象以及使用</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="type">void</span>)viewDidLoad &#123;</span><br><span class="line">    [<span class="variable language_">super</span> viewDidLoad];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 申明变量</span></span><br><span class="line">    pthread_t thread;</span><br><span class="line">    <span class="comment">// 开启现场，执行任务</span></span><br><span class="line">    pthread_create(&amp;thread, <span class="literal">NULL</span>, run, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="comment">// 设置子线程状态为 detach, 该线程运行结束后会自动释放所有资源</span></span><br><span class="line">    pthread_detach(thread);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *run(<span class="type">void</span> *param) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%@&quot;</span>, [<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="RunLoop运行机制"><a href="#RunLoop运行机制" class="headerlink" title="RunLoop运行机制"></a>RunLoop运行机制</h1><h1 id="主线程"><a href="#主线程" class="headerlink" title="主线程"></a>主线程</h1><p>自己能够保活，因为底层判断是根据 <code>modes</code> 是否为空来决定线程是否休眠（销毁），如果是主线程则是个例外，直接返回不为空。非主线程则是根据 <code>_sources0</code> <code>_sources1</code> <code>_timers</code> 中是否有数据来判断。<br><a target="_blank" rel="noopener" href="https://github.com/apple/swift-corelibs-foundation">源码如是</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// expects rl and rlm locked</span></span><br><span class="line"><span class="type">static</span> Boolean __CFRunLoopModeIsEmpty(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFRunLoopModeRef previousMode) &#123;</span><br><span class="line">    <span class="built_in">CHECK_FOR_FORK</span>();</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">NULL</span> == rlm) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"><span class="meta">#<span class="keyword">if</span> TARGET_OS_WIN32</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="number">0</span> != rlm-&gt;_msgQMask) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">if</span> __HAS_DISPATCH__</span></span><br><span class="line">    Boolean libdispatchQSafe = <span class="built_in">pthread_main_np</span>() == <span class="number">1</span> &amp;&amp; ((HANDLE_DISPATCH_ON_BASE_INVOCATION_ONLY &amp;&amp; <span class="literal">NULL</span> == previousMode) || (!HANDLE_DISPATCH_ON_BASE_INVOCATION_ONLY &amp;&amp; <span class="number">0</span> == _CFGetTSD(__CFTSDKeyIsInGCDMainQ)));</span><br><span class="line">    <span class="keyword">if</span> (libdispatchQSafe &amp;&amp; (<span class="built_in">CFRunLoopGetMain</span>() == rl) &amp;&amp; <span class="built_in">CFSetContainsValue</span>(rl-&gt;_commonModes, rlm-&gt;_name)) <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// represents the libdispatch main queue</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">NULL</span> != rlm-&gt;_sources0 &amp;&amp; <span class="number">0</span> &lt; <span class="built_in">CFSetGetCount</span>(rlm-&gt;_sources0)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">NULL</span> != rlm-&gt;_sources1 &amp;&amp; <span class="number">0</span> &lt; <span class="built_in">CFSetGetCount</span>(rlm-&gt;_sources1)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">NULL</span> != rlm-&gt;_timers &amp;&amp; <span class="number">0</span> &lt; <span class="built_in">CFArrayGetCount</span>(rlm-&gt;_timers)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">_block_item</span> *item = rl-&gt;_blocks_head;</span><br><span class="line">    <span class="keyword">while</span> (item) &#123;</span><br><span class="line">        <span class="keyword">struct</span> <span class="title class_">_block_item</span> *curr = item;</span><br><span class="line">        item = item-&gt;_next;</span><br><span class="line">        Boolean doit = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (_kCFRuntimeIDCFString == <span class="built_in">CFGetTypeID</span>(curr-&gt;_mode)) &#123;</span><br><span class="line">            doit = <span class="built_in">CFEqual</span>(curr-&gt;_mode, rlm-&gt;_name) || (<span class="built_in">CFEqual</span>(curr-&gt;_mode, kCFRunLoopCommonModes) &amp;&amp; <span class="built_in">CFSetContainsValue</span>(rl-&gt;_commonModes, rlm-&gt;_name));</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            doit = <span class="built_in">CFSetContainsValue</span>((CFSetRef)curr-&gt;_mode, rlm-&gt;_name) || (<span class="built_in">CFSetContainsValue</span>((CFSetRef)curr-&gt;_mode, kCFRunLoopCommonModes) &amp;&amp; <span class="built_in">CFSetContainsValue</span>(rl-&gt;_commonModes, rlm-&gt;_name));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (doit) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong><code>pthread_create</code> 函数参数说明</strong></p>
-<figure class="highlight h"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">pthread_create</span><span class="params">(<span class="type">pthread_t</span> _Nullable * _Nonnull __restrict, </span></span><br><span class="line"><span class="params">    <span class="type">const</span> <span class="type">pthread_attr_t</span> * _Nullable __restrict,</span></span><br><span class="line"><span class="params">    <span class="type">void</span> * _Nullable (* _Nonnull)(<span class="type">void</span> * _Nullable),</span></span><br><span class="line"><span class="params">    <span class="type">void</span> * _Nullable __restrict)</span>;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>表示线程对象，指向线程标识符的指针 <code>&amp;thread</code></li>
-<li>表示线程属性，可赋值 <code>NULL</code></li>
-<li>表示函数指针，在 <code>thread</code> 线程中要执行的任务</li>
-<li>表示函数参数</li>
-</ol>
-<h3 id="pthread-其他相关方法"><a href="#pthread-其他相关方法" class="headerlink" title="pthread 其他相关方法"></a><code>pthread</code> 其他相关方法</h3><ul>
-<li><code>pthread_create()</code> 创建一个线程</li>
-<li><code>pthread_exit()</code> 终止当前线程</li>
-<li><code>pthread_cancel()</code> 中断另外一个线程的运行</li>
-<li><code>pthread_join()</code> 阻塞当前的线程，直到另外一个线程运行结束</li>
-<li><code>pthread_attr_init()</code> 初始化线程的属性</li>
-<li><code>pthread_attr_setdetachstate()</code> 设置脱离状态的属性（决定这个线程在终止时是否可以被结合）</li>
-<li><code>pthread_attr_getdetachstate()</code> 获取脱离状态的属性</li>
-<li><code>pthread_attr_destroy()</code> 删除线程的属性</li>
-<li><code>pthread_kill()</code> 向线程发送一个信号</li>
-</ul>
-<h2 id="NSThread"><a href="#NSThread" class="headerlink" title="NSThread"></a>NSThread</h2><p><code>NSThread</code> 是苹果官方提供的，使用起来比 <code>pthread</code> 更加面向对象，简单易用，可以直接操作线程对象。不过也需要需要程序员自己管理线程的生命周期(主要是创建)，我们在开发的过程中偶尔使用 <code>NSThread</code> 。比如我们会经常调用<code>[NSThread currentThread]</code>来显示当前的进程信息。</p>
-<h3 id="创建、启动线程"><a href="#创建、启动线程" class="headerlink" title="创建、启动线程"></a>创建、启动线程</h3><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 创建线程</span></span><br><span class="line"><span class="built_in">NSThread</span> *thread = [[<span class="built_in">NSThread</span> alloc] initWithTarget:<span class="keyword">self</span> selector:<span class="keyword">@selector</span>(run) object:<span class="literal">nil</span>];</span><br><span class="line"><span class="comment">// 2. 启动线程</span></span><br><span class="line">[thread start];    <span class="comment">// 线程一启动，就会在线程thread中执行self的run方法</span></span><br><span class="line"><span class="comment">// 新线程调用方法，里边为需要执行的任务</span></span><br><span class="line">- (<span class="type">void</span>)run &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@&quot;%@&quot;</span>, [<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>待更新… 暂时不想更新😭</strong></p>
+<h1 id="所以如何进行线程保活"><a href="#所以如何进行线程保活" class="headerlink" title="所以如何进行线程保活?"></a>所以如何进行线程保活?</h1><p>只需要在 <code>_sources0</code> <code>_sources1</code> <code>_timers</code> 中添加事件，线程就能处于活跃状态。</p>
+<p><strong>线程是保活了，但如果我想停止怎么办？</strong></p>
+<h1 id="如何控制RunLoop"><a href="#如何控制RunLoop" class="headerlink" title="如何控制RunLoop"></a>如何控制RunLoop</h1><h1 id="RunLoop还解决哪些问题？"><a href="#RunLoop还解决哪些问题？" class="headerlink" title="RunLoop还解决哪些问题？"></a>RunLoop还解决哪些问题？</h1><p><strong>卡顿</strong></p>
+<p><strong>NSRunLoop VS CFRunLoop</strong><br>CFRunLoop存在于Foundation框架中，使用C语言实现，相对于NSRunloop是线程安全🔐的</p>
 
     </div>
 
@@ -284,22 +257,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/OC/" rel="tag"># OC</a>
-              <a href="/tags/iOS%E5%BC%80%E5%8F%91/" rel="tag"># iOS开发</a>
-              <a href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag"># 线程</a>
+              <a href="/tags/runloop/" rel="tag"># runloop</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/07/06/rn-flex-layout/" rel="prev" title="React Native Flexbox">
-                  <i class="fa fa-chevron-left"></i> React Native Flexbox
+                <a href="/2022/06/30/authentication-biometrics/" rel="prev" title="生物认证 TouchID/FaceID">
+                  <i class="fa fa-chevron-left"></i> 生物认证 TouchID/FaceID
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/07/06/link-symbol/" rel="next" title="链接与符号 Link&Symbol">
-                  链接与符号 Link&Symbol <i class="fa fa-chevron-right"></i>
+                <a href="/2022/07/06/rn-flex-layout/" rel="next" title="React Native Flexbox">
+                  React Native Flexbox <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
