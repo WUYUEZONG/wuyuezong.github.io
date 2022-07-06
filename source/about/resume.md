@@ -9,7 +9,7 @@ date: 2022-06-30 09:11:10
 ----
 
 所在地：杭州（余杭）
-毕业于：南昌大学软件工程系（2012 ～ 2016）
+毕业于：211南昌大学软件工程系（2012 ～ 2016）
 联系我：13037241933（同微信）
 邮件我：w.yzong@outlook.com
 
@@ -24,6 +24,8 @@ date: 2022-06-30 09:11:10
 - 乐于接受新事物新语言，并有足够的学习动力；
 - 熟练使用MacOS、Xcode开发工具、证书生成、应用上架发布等；
 - svn、git代码管理；
+- 能够简单使用ReactNative、Flutter写界面；
+- 拥有[个人博客](https://wuyuezong.github.io)、[Gitbook](https://wuyuezong.gitbook.io/xue-xi-objectivec-yu-yan/)
 - 有一定的审美；
 
 # 工作经历
@@ -64,7 +66,7 @@ date: 2022-06-30 09:11:10
 # 项目介绍
 ----
 
-[**蛮牛摄像机（商店链接）**](https://apps.apple.com/cn/app/braineex-脑洞/id1509908215)
+[**蛮牛摄像机（商店链接）**](https://apps.apple.com/cn/app/蛮牛摄像机/id1318137387)
 
 > 该项目是物联网项目，主要是和摄像头通讯，远程控制摄像头，查看摄像头画面、对讲等功能。
 
