@@ -10,6 +10,83 @@ tags:
 
 <!-- more -->
 
+# RunLoop与线程
+`RunLoop` 和线程是一一对应关系，在源码中，线程和 `Runloop` 互为一对 `Key、Value`，可以关注一下 `loop` 的获取：**是把线程地址作为key来获取RunLoop的**。
+```c++
+void const *CFDictionaryGetValue(CFDictionaryRef hc, void const *key) {...}
+// ...
+CFRunLoopRef loop = (CFRunLoopRef)CFDictionaryGetValue(__CFRunLoops, pthreadPointer(t));
+```
+通过这里也可以知道，`RunLoop` 中是没有提供创建的API，只需要通过在线程内部获取当前 `RunLoop` 就会自动创建（主线程除外）。
+
+```c++
+CF_EXPORT CFRunLoopRef _CFRunLoopGet0(_CFThreadRef t) {
+    if (pthread_equal(t, kNilPthreadT)) {
+	t = pthread_main_thread_np();
+    }
+    __CFLock(&loopsLock);
+    if (!__CFRunLoops) {
+	CFMutableDictionaryRef dict = CFDictionaryCreateMutable(kCFAllocatorSystemDefault, 0, NULL, &kCFTypeDictionaryValueCallBacks);
+	CFRunLoopRef mainLoop = __CFRunLoopCreate(pthread_main_thread_np());
+	CFDictionarySetValue(dict, pthreadPointer(pthread_main_thread_np()), mainLoop);
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated"
+	if (!OSAtomicCompareAndSwapPtrBarrier(NULL, dict, (void * volatile *)&__CFRunLoops)) {
+#pragma GCC diagnostic pop
+	    CFRelease(dict);
+	}
+	CFRelease(mainLoop);
+    }
+    CFRunLoopRef newLoop = NULL;
+    CFRunLoopRef loop = (CFRunLoopRef)CFDictionaryGetValue(__CFRunLoops, pthreadPointer(t));
+    if (!loop) {
+	newLoop = __CFRunLoopCreate(t);
+        
+        cf_trace(KDEBUG_EVENT_CFRL_LIFETIME|DBG_FUNC_START, newLoop, NULL, NULL, NULL);
+        CFDictionarySetValue(__CFRunLoops, pthreadPointer(t), newLoop);
+        loop = newLoop;
+    }
+    __CFUnlock(&loopsLock);
+    // don't release run loops inside the loopsLock, because CFRunLoopDeallocate may end up taking it
+    if (newLoop) { CFRelease(newLoop); }
+    
+    if (pthread_equal(t, pthread_self())) {
+        _CFSetTSD(__CFTSDKeyRunLoop, (void *)loop, NULL);
+        if (0 == _CFGetTSD(__CFTSDKeyRunLoopCntr)) {
+#if _POSIX_THREADS
+            _CFSetTSD(__CFTSDKeyRunLoopCntr, (void *)(PTHREAD_DESTRUCTOR_ITERATIONS-1), (void (*)(void *))__CFFinalizeRunLoop);
+#else
+            _CFSetTSD(__CFTSDKeyRunLoopCntr, 0, &__CFFinalizeRunLoop);
+#endif
+        }
+    }
+    return loop;
+}
+```
+
+# RunLoop的组成
+
+一个 `RunLoop` 主要由：`CFRunLoopMode / CFRunLoopSourceRef / CFRunLoopObserverRef / CFRunLoopTimerRef` 组成。 `RunLoop` 可以拥有多种Mode，Mode中包含 `Source / Observer / Timer`。
+![]()
+
+**CFRunLoopMode（RunLoop的运行模式）共五类**
+kCFRunLoopDefaultMode
+App的默认Mode，通常主线程是在这个Mode下运行
+
+UITrackingRunLoopMode
+界面跟踪 Mode，用于 ScrollView 追踪触摸滑动，保证界面滑动时不受其他 Mode 影响
+
+UIInitializationRunLoopMode
+在刚启动 App 时第进入的第一个 Mode，启动完成后就不再使用
+
+GSEventReceiveRunLoopMode
+接受系统事件的内部 Mode，通常用不到
+
+kCFRunLoopCommonModes
+这是一个占位用的Mode，不是一种真正的Mode，可以简单理解为 `kCFRunLoopDefaultMode` 和 `UITrackingRunLoopMode` 的结合
+
+
+
 # RunLoop运行机制
 
 
@@ -65,5 +142,5 @@ static Boolean __CFRunLoopModeIsEmpty(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFR
 
 
 **NSRunLoop VS CFRunLoop**
-CFRunLoop存在于Foundation框架中，使用C语言实现，相对于NSRunloop是线程安全🔐的
+CFRunLoop存在于Foundation框架中，使用的是纯C函数实现，相对于NSRunloop，这些C函数API都是线程安全🔐的。
 
