@@ -69,25 +69,70 @@ CF_EXPORT CFRunLoopRef _CFRunLoopGet0(_CFThreadRef t) {
 一个 `RunLoop` 主要由：`CFRunLoopMode / CFRunLoopSourceRef / CFRunLoopObserverRef / CFRunLoopTimerRef` 组成。 `RunLoop` 可以拥有多种Mode，Mode中包含 `Source / Observer / Timer`。
 ![]()
 
-**CFRunLoopMode（RunLoop的运行模式）共五类**
-kCFRunLoopDefaultMode
-App的默认Mode，通常主线程是在这个Mode下运行
+## CFRunLoopMode（RunLoop的运行模式）共五类
 
-UITrackingRunLoopMode
-界面跟踪 Mode，用于 ScrollView 追踪触摸滑动，保证界面滑动时不受其他 Mode 影响
+- kCFRunLoopDefaultMode
+`App` 的默认 `Mode`，通常主线程是在这个 `Mode` 下运行
 
-UIInitializationRunLoopMode
-在刚启动 App 时第进入的第一个 Mode，启动完成后就不再使用
+- UITrackingRunLoopMode
+界面跟踪`Mode`，用于 `ScrollView` 追踪触摸滑动，保证界面滑动时不受其他 `Mode` 影响
 
-GSEventReceiveRunLoopMode
-接受系统事件的内部 Mode，通常用不到
+- UIInitializationRunLoopMode
+在刚启动 `App` 时第进入的第一个 `Mode`，启动完成后就不再使用
 
-kCFRunLoopCommonModes
-这是一个占位用的Mode，不是一种真正的Mode，可以简单理解为 `kCFRunLoopDefaultMode` 和 `UITrackingRunLoopMode` 的结合
+- GSEventReceiveRunLoopMode
+接受系统事件的内部 `Mode`，通常用不到
 
+- kCFRunLoopCommonModes
+这是一个占位用的 `Mode`，不是一种真正的 `Mode`，可以简单理解为 `kCFRunLoopDefaultMode` 和 `UITrackingRunLoopMode` 的结合
+
+## CFRunLoopSource（输入源/事件源）
+这里有两个源：_sources0 、 _sources1
+**_sources0**
+即非基于 `port` 的，也就是用户触发事件，需要手动唤醒线程。将当前线程从{% hint '内核态切换到用户态' 'CPU的两种工作状态，内核态可以调度所有的资源，用户态则只可以调度用户工作界面' %}
+**_sources1**
+基于 `port` 的，包含一个 `mach_port` 和一个回调，可以监听系统端口和通过内核态和其他线程发送消息，能主动唤醒 `RunLoop`，接收分发系统事件，具备唤醒线程能力。
+
+## CFRunLoopTimer（定时源）
+基于时间的触发器，基本上说的就是 `NSTimer`。在预设的时间点唤醒 `RunLoop` 执行回调。因为它是基于 `RunLoop` 的，因此它不是实时的（就是 `NSTimer` 是不准确的。 因为 `RunLoop` 只负责分发源的消息。如果线程当前正在处理繁重的任务，就有可能导致 `Timer` 本次延时，或者少执行一次）
+
+## CFRunLoopObserver（观察者）
+可以对 RunLoop 不同状态下进行监听，从而对当前 RunLoop 工作状态进行优化。
+
+- kCFRunLoopEntry
+`RunLoop` 准备启动
+- kCFRunLoopBeforeTimers
+`RunLoop` 将要处理一些 `Timer` 相关事件
+- kCFRunLoopBeforeSources
+`RunLoop` 将要处理一些 `Source` 事件
+- kCFRunLoopBeforeWaiting
+`RunLoop` 将要进行休眠状态，即将由用户态切换到内核态
+- kCFRunLoopAfterWaiting
+`RunLoop` 被唤醒，即从内核态切换到用户态后
+- kCFRunLoopExit
+`RunLoop` 退出
+- kCFRunLoopAllActivities
+监听所有状态活动
+
+如何设置监听
 
 
 # RunLoop运行机制
+
+1️⃣ 调用 `Observer` 监听方法状态为 `kCFRunLoopEntry`
+2️⃣ 调用 `Observer` 监听方法状态为 `kCFRunLoopBeforeTimers`
+3️⃣ 调用 `Observer` 监听方法状态为 `kCFRunLoopBeforeSources`
+4️⃣ 处理 `Blocks` ：`__CFRunLoopDoBlocks`
+5️⃣ 处理 `sources0`，如果被处理过则再次处理 `Blocks`
+⁉️ 判断是否存在 `sources1`，如果存在 7️⃣，如果不存在 6️⃣
+6️⃣ 调用 `Observer` 监听方法状态为 `kCFRunLoopBeforeWaiting`，并随时等待被 `sources1` / `dipatch` / `timer` / `source0` / `手动唤醒` 唤醒，如有，则会：调用 `Observer` 监听方法状态为 `kCFRunLoopAfterWaiting` 继续 7️⃣
+7️⃣ 处理 `timers`
+8️⃣ 处理 `GCD Main`
+9️⃣ 处理 `sources1`
+🔟 处理 `Blocks`
+⁉️ 是否还有需要处理的任务？是跳转到 2️⃣ 重新开始， 否则：调用 `Observer` 监听方法状态为 `kCFRunLoopExit`
+
+
 
 
 
@@ -144,3 +189,9 @@ static Boolean __CFRunLoopModeIsEmpty(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFR
 **NSRunLoop VS CFRunLoop**
 CFRunLoop存在于Foundation框架中，使用的是纯C函数实现，相对于NSRunloop，这些C函数API都是线程安全🔐的。
 
+
+# 参考
+
+[1](https://www.jianshu.com/p/d97729a4e8a7)
+[2](https://zhuanlan.zhihu.com/p/277380342)
+[3](https://blog.ibireme.com/2015/05/18/runloop/)
