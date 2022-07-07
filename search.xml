@@ -26,7 +26,7 @@
   </entry>
   <entry>
     <title>中间人模式 (CTMediator) 分析</title>
-    <url>/2022/07/06/center-core-mode/</url>
+    <url>/2022/07/07/center-core-mode/</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><p>关于组件化开发，在我的理解里，它一直都是，应用主体去协调各个 <code>pod</code> 。</p>
 <p>理解：<br>如果在一个大型项目中，<br>首先根据项目去化分业务 (业务1， 业务2， 业务3，…)<br>每个业务给到开发人员，开发人员根据业务去开发相应的功能，那么这个过程中，肯定会有不同业务中的相识功能，就比如，业务1，网络请求用A库而业务2用的是B库，那么其实A库、B库能做的事情是一样的，选择较好的就行，所以就要提前制定规则，把应用分层，不至于造成这样的代码冗余，我的想法是分为三层：</p>
 <ul>
@@ -47,7 +47,7 @@
   </entry>
   <entry>
     <title>高性能的AutoLayout</title>
-    <url>/2022/07/06/high-performance-autolayout/</url>
+    <url>/2022/07/07/high-performance-autolayout/</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><p>以下是看完 <a href="https://developer.apple.com/videos/play/wwdc2018/220/">WWDC18: High Performance Auto Layout</a> 的简单总结。</p>
 <h2 id="避免操作updateConstants"><a href="#避免操作updateConstants" class="headerlink" title="避免操作updateConstants()"></a>避免操作updateConstants()</h2><p>避免操作updateConstants() ，它的调用频次是 120次&#x2F;s ，如果需要在updateConstants()中操作布局，尽量只布局未设置约束的视图。</p>
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">func</span> <span class="title function_">updateConstants</span>() &#123;</span><br><span class="line">	<span class="keyword">if</span> constants <span class="operator">==</span> <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="comment">// set constants.</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">super</span>.updateConstants()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -127,7 +127,7 @@
   </entry>
   <entry>
     <title>链接与符号 Link&amp;Symbol</title>
-    <url>/2022/07/06/link-symbol/</url>
+    <url>/2022/07/07/link-symbol/</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="Mach-O"><a href="#Mach-O" class="headerlink" title="Mach-O"></a>Mach-O</h1><p>Mach-O格式全称为Mach Object文件格式的缩写，是MacOS或者iOS上可执行的程序格式，类似于Windows上的PE格式 (Portable Executable)，linux上的ELF格式 (Executable and Linking Format)。</p>
 <span id="more"></span>
 
@@ -164,7 +164,7 @@
   </entry>
   <entry>
     <title>pthread / NSThread</title>
-    <url>/2022/07/06/pthred-nsthread/</url>
+    <url>/2022/07/07/pthred-nsthread/</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><p>这里需要写摘要</p>
 <span id="more"></span>
 <h2 id="pthread"><a href="#pthread" class="headerlink" title="pthread"></a>pthread</h2><h3 id="导入头文件"><a href="#导入头文件" class="headerlink" title="导入头文件"></a>导入头文件</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="meta">#import <span class="string">&lt;pthread.h&gt;</span></span></span><br></pre></td></tr></table></figure>
@@ -208,7 +208,7 @@
   </entry>
   <entry>
     <title>React Native Flexbox</title>
-    <url>/2022/07/06/rn-flex-layout/</url>
+    <url>/2022/07/07/rn-flex-layout/</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><p>这里只是个人学习对官方的Flexbox布局的简单总结以及备忘，内容并不全面，深入学习建议阅读官方文档。</p>
 <div class="note info"><p>推荐阅读官网<a href="https://www.react-native.cn/docs/flexbox">“使用Flexbox布局”</a></p>
 </div>
@@ -267,7 +267,7 @@
   </entry>
   <entry>
     <title>iOS Runloop</title>
-    <url>/2022/07/06/runloop/</url>
+    <url>/2022/07/07/runloop/</url>
     <content><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="整理中…"><a href="#整理中…" class="headerlink" title="整理中…"></a>整理中…</h1><span id="more"></span>
 
 <h1 id="RunLoop运行机制"><a href="#RunLoop运行机制" class="headerlink" title="RunLoop运行机制"></a>RunLoop运行机制</h1><h1 id="主线程"><a href="#主线程" class="headerlink" title="主线程"></a>主线程</h1><p>自己能够保活，因为底层判断是根据 <code>modes</code> 是否为空来决定线程是否休眠（销毁），如果是主线程则是个例外，直接返回不为空。非主线程则是根据 <code>_sources0</code> <code>_sources1</code> <code>_timers</code> 中是否有数据来判断。<br><a href="https://github.com/apple/swift-corelibs-foundation">源码如是</a></p>

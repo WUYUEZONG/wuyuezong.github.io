@@ -20,28 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wuyuezong.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="这里只是个人学习对官方的Flexbox布局的简单总结以及备忘，内容并不全面，深入学习建议阅读官方文档。 推荐阅读官网“使用Flexbox布局”">
+    <meta name="description" content="组件化关于组件化开发，在我的理解里，它一直都是，应用主体去协调各个 pod 。 理解：如果在一个大型项目中，首先根据项目去化分业务 (业务1， 业务2， 业务3，…)每个业务给到开发人员，开发人员根据业务去开发相应的功能，那么这个过程中，肯定会有不同业务中的相识功能，就比如，业务1，网络请求用A库而业务2用的是B库，那么其实A库、B库能做的事情是一样的，选择较好的就行，所以就要提前制定规则，把应用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React Native Flexbox">
-<meta property="og:url" content="https://wuyuezong.github.io/2022/07/06/rn-flex-layout/index.html">
+<meta property="og:title" content="中间人模式 (CTMediator) 分析">
+<meta property="og:url" content="https://wuyuezong.github.io/2022/07/07/center-core-mode/index.html">
 <meta property="og:site_name" content="ZONE">
-<meta property="og:description" content="这里只是个人学习对官方的Flexbox布局的简单总结以及备忘，内容并不全面，深入学习建议阅读官方文档。 推荐阅读官网“使用Flexbox布局”">
+<meta property="og:description" content="组件化关于组件化开发，在我的理解里，它一直都是，应用主体去协调各个 pod 。 理解：如果在一个大型项目中，首先根据项目去化分业务 (业务1， 业务2， 业务3，…)每个业务给到开发人员，开发人员根据业务去开发相应的功能，那么这个过程中，肯定会有不同业务中的相识功能，就比如，业务1，网络请求用A库而业务2用的是B库，那么其实A库、B库能做的事情是一样的，选择较好的就行，所以就要提前制定规则，把应用">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-06T15:54:26.866Z">
-<meta property="article:modified_time" content="2022-07-06T15:54:26.866Z">
+<meta property="article:published_time" content="2022-07-07T09:19:27.679Z">
+<meta property="article:modified_time" content="2022-07-07T09:19:27.679Z">
 <meta property="article:author" content="wuyuezong">
-<meta property="article:tag" content="Flexbox">
+<meta property="article:tag" content="中间人模式">
+<meta property="article:tag" content="CTMediator">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://wuyuezong.github.io/2022/07/06/rn-flex-layout/">
+<link rel="canonical" href="https://wuyuezong.github.io/2022/07/07/center-core-mode/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wuyuezong.github.io/2022/07/06/rn-flex-layout/","path":"2022/07/06/rn-flex-layout/","title":"React Native Flexbox"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://wuyuezong.github.io/2022/07/07/center-core-mode/","path":"2022/07/07/center-core-mode/","title":"中间人模式 (CTMediator) 分析"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>React Native Flexbox | ZONE</title>
+<title>中间人模式 (CTMediator) 分析 | ZONE</title>
   
 
 
@@ -117,7 +118,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Flex"><span class="nav-number">1.</span> <span class="nav-text">Flex</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Flex-Direction"><span class="nav-number">2.</span> <span class="nav-text">Flex Direction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Layout-Direction"><span class="nav-number">3.</span> <span class="nav-text">Layout Direction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#justifyContent"><span class="nav-number">4.</span> <span class="nav-text">justifyContent</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Align-Items"><span class="nav-number">5.</span> <span class="nav-text">Align Items</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Align-Self"><span class="nav-number">6.</span> <span class="nav-text">Align Self</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Align-Content"><span class="nav-number">7.</span> <span class="nav-text">Align Content</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Flex-Wrap"><span class="nav-number">8.</span> <span class="nav-text">Flex Wrap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Flex-Basis-Grow-and-Shrink"><span class="nav-number">9.</span> <span class="nav-text">Flex Basis, Grow, and Shrink</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">组件化</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -188,7 +189,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wuyuezong.github.io/2022/07/06/rn-flex-layout/">
+    <link itemprop="mainEntityOfPage" href="https://wuyuezong.github.io/2022/07/07/center-core-mode/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -201,12 +202,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="React Native Flexbox | ZONE">
+      <meta itemprop="name" content="中间人模式 (CTMediator) 分析 | ZONE">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          React Native Flexbox
+          中间人模式 (CTMediator) 分析
         </h1>
 
         <div class="post-meta-container">
@@ -217,7 +218,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-07-06 15:54:26" itemprop="dateCreated datePublished" datetime="2022-07-06T15:54:26+00:00">2022-07-06</time>
+      <time title="创建时间：2022-07-07 09:19:27" itemprop="dateCreated datePublished" datetime="2022-07-07T09:19:27+00:00">2022-07-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -225,7 +226,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/React-Native/" itemprop="url" rel="index"><span itemprop="name">React Native</span></a>
+          <a href="/categories/iOS%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">iOS开发</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/iOS%E5%BC%80%E5%8F%91/%E7%BB%84%E4%BB%B6%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">组件化</span></a>
         </span>
     </span>
 
@@ -239,54 +244,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><p>这里只是个人学习对官方的Flexbox布局的简单总结以及备忘，内容并不全面，深入学习建议阅读官方文档。</p>
-<div class="note info"><p>推荐阅读官网<a target="_blank" rel="noopener" href="https://www.react-native.cn/docs/flexbox">“使用Flexbox布局”</a></p>
-</div>
-
-<span id="more"></span>
-
-<h1 id="Flex"><a href="#Flex" class="headerlink" title="Flex"></a>Flex</h1><p>flex属性决定元素在主轴上如何填满可用区域。整个区域会根据每个元素设置的 flex属性值被分割成多个部分。</p>
-<h1 id="Flex-Direction"><a href="#Flex-Direction" class="headerlink" title="Flex Direction"></a>Flex Direction</h1><p>在组件的style中指定flexDirection可以决定布局的主轴。子元素是应该沿着水平轴(row)方向排列，还是沿着竖直轴(column)方向排列呢？默认值是竖直轴(column)方向。</p>
+        <link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><p>关于组件化开发，在我的理解里，它一直都是，应用主体去协调各个 <code>pod</code> 。</p>
+<p>理解：<br>如果在一个大型项目中，<br>首先根据项目去化分业务 (业务1， 业务2， 业务3，…)<br>每个业务给到开发人员，开发人员根据业务去开发相应的功能，那么这个过程中，肯定会有不同业务中的相识功能，就比如，业务1，网络请求用A库而业务2用的是B库，那么其实A库、B库能做的事情是一样的，选择较好的就行，所以就要提前制定规则，把应用分层，不至于造成这样的代码冗余，我的想法是分为三层：</p>
 <ul>
-<li>column | 从上到下</li>
-<li>row | 从左到右</li>
-<li>column-reverse | 从下到上</li>
-<li>row-reverse | 从右到左</li>
+<li>首先是<strong>基础模块</strong>，一般通用切必要的服务可以归类在这一层，比如<strong>网络和存储</strong>。</li>
+<li>其次是<strong>业务组件</strong>，就是单个UI层面的通用组件，它可以供各个业务模块使用。</li>
+<li>最后是<strong>业务层</strong>，他们是某一业务的完整功能，比如<strong>账号、支付、埋点</strong>等等。</li>
 </ul>
-<h1 id="Layout-Direction"><a href="#Layout-Direction" class="headerlink" title="Layout Direction"></a>Layout Direction</h1><ul>
-<li>ltr | 从左到右</li>
-<li>rtl | 从右到左</li>
-</ul>
-<h1 id="justifyContent"><a href="#justifyContent" class="headerlink" title="justifyContent"></a>justifyContent</h1><p>在组件的 style 中指定justifyContent可以决定其子元素沿着主轴的排列方式。子元素是应该靠近主轴的起始端还是末尾段分布呢？亦或应该均匀分布？可用的选项有：</p>
-<ul>
-<li>flex-start</li>
-<li>flex-end</li>
-<li>space-between</li>
-<li>space-around</li>
-<li>space-evenly</li>
-</ul>
-<h1 id="Align-Items"><a href="#Align-Items" class="headerlink" title="Align Items"></a>Align Items</h1><p>在组件的 style 中指定alignItems可以决定其子元素沿着次轴（与主轴垂直的轴，比如若主轴方向为row，则次轴方向为column）的排列方式。子元素是应该靠近次轴的起始端还是末尾段分布呢？亦或应该均匀分布？可用的选项有</p>
-<ul>
-<li>stretch | 填满次轴 </li>
-<li>flex-start</li>
-<li>flex-end</li>
-<li>center</li>
-<li>baseline</li>
-</ul>
-<h1 id="Align-Self"><a href="#Align-Self" class="headerlink" title="Align Self"></a>Align Self</h1><p>作用同 Align Items，但是只作用于被定义的对象，不影响容器子对象。</p>
-<h1 id="Align-Content"><a href="#Align-Content" class="headerlink" title="Align Content"></a>Align Content</h1><p>适用于被折行的子视图，即，设置属性flexWrap时（Wrap）。效果同justifyContent，是次轴上的justifyContent。</p>
-<ul>
-<li>flex-start</li>
-<li>flex-end</li>
-<li>space-between</li>
-<li>space-around</li>
-<li>space-evenly</li>
-</ul>
-<h1 id="Flex-Wrap"><a href="#Flex-Wrap" class="headerlink" title="Flex Wrap"></a>Flex Wrap</h1><ul>
-<li>wrap</li>
-<li>no-wrap</li>
-</ul>
-<h1 id="Flex-Basis-Grow-and-Shrink"><a href="#Flex-Basis-Grow-and-Shrink" class="headerlink" title="Flex Basis, Grow, and Shrink"></a>Flex Basis, Grow, and Shrink</h1><p>flexBasis: 视图在主轴上的宽度（auto，int）<br>flexGrow: 视图在主轴上的生长能力（int），grow较大则会填充容器。<br>flexShrink: 视图在主轴上的缩小能力（int），shrink较大视图则会根据basis或width的值显示。</p>
+<p>那么还有一个分工问题。应用层次为三层，是不是对应分人做就是？</p>
 
     </div>
 
@@ -296,21 +261,19 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Flexbox/" rel="tag"># Flexbox</a>
+              <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%A8%A1%E5%BC%8F/" rel="tag"># 中间人模式</a>
+              <a href="/tags/CTMediator/" rel="tag"># CTMediator</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/07/06/runloop/" rel="prev" title="iOS Runloop">
-                  <i class="fa fa-chevron-left"></i> iOS Runloop
+                <a href="/2022/07/07/high-performance-autolayout/" rel="prev" title="高性能的AutoLayout">
+                  <i class="fa fa-chevron-left"></i> 高性能的AutoLayout
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/07/06/pthred-nsthread/" rel="next" title="pthread / NSThread">
-                  pthread / NSThread <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
