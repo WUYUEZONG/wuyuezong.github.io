@@ -16,8 +16,8 @@
 #   weight = 10
 
 [[main]]
-  name = "IOS"
-  pageRef = "samples"
+  name = "HOME"
+  pageRef = "/"
   weight = 20
 
 [[main]]

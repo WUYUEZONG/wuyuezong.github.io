@@ -5,19 +5,19 @@ isoCode = "zh-cn"
 weight = 1
 rtl = false
 
-title = "Blowfish"
+title = "wyz"
 logo = "img/blowfish_logo_transparent.png"
-description = "CNCNCNCN"
+description = "记录生活～"
 # copyright = "Copy, _right?_ :thinking_face:"
 
 dateFormat = "2022.11.11"
 
 [author]
-  name = "Blowfish"
+  name = "WUYUEZONG"
   image = "img/blowfish_logo.png"
-  headline = "我的 A powerful, lightweight theme for Hugo built with Tailwind CSS."
-  bio = "我的 A powerful, lightweight theme for Hugo built with Tailwind CSS."
+  headline = "温故而知新～"
+  bio = "温故而知新～"
   links = [
-    { twitter = "https://twitter.com/burufugu" },
-    { github = "https://github.com/nunocoracao/blowfish" },
+    # { twitter = "https://twitter.com/burufugu" },
+    { github = "https://github.com/WUYUEZONG" },
   ]
