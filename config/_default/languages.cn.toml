@@ -1,0 +1,23 @@
+languageCode = "zh-cn"
+languageName = "Chinese"
+displayName = "CN"
+isoCode = "zh-cn"
+weight = 1
+rtl = false
+
+title = "Blowfish"
+logo = "img/blowfish_logo_transparent.png"
+description = "CNCNCNCN"
+# copyright = "Copy, _right?_ :thinking_face:"
+
+dateFormat = "2022.11.11"
+
+[author]
+  name = "Blowfish"
+  image = "img/blowfish_logo.png"
+  headline = "我的 A powerful, lightweight theme for Hugo built with Tailwind CSS."
+  bio = "我的 A powerful, lightweight theme for Hugo built with Tailwind CSS."
+  links = [
+    { twitter = "https://twitter.com/burufugu" },
+    { github = "https://github.com/nunocoracao/blowfish" },
+  ]
