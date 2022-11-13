@@ -4,7 +4,7 @@ date: 2020-08-12
 draft: false
 description: "Turn on thumbnails for your articles."
 slug: "thumbnails"
-tags: ["thumbnail", "config", "docs"]
+# tags: ["thumbnail", "config", "docs"]
 series: ["Documentation"]
 series_order: 6
 ---
@@ -38,7 +38,7 @@ content
 └── awesome_article
     └── featured.png
 ```
-The you just need to add an image like explain earlier. If you want to see a sample of this you can consult [this sample]({{< ref "thumbnail_sample" >}}).
+
 
 ## Hero Images
 

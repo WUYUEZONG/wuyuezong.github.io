@@ -4,7 +4,7 @@ date: 2020-08-10
 draft: false
 description: "All the partials available in Blowfish."
 slug: "partials"
-tags: ["partials", "analytics", "privacy", "comments", "favicons", "icon", "docs"]
+# tags: ["partials", "analytics", "privacy", "comments", "favicons", "icon", "docs"]
 series: ["Documentation"]
 series_order: 9
 ---
@@ -80,8 +80,6 @@ Similar to the [icon shortcode]({{< ref "shortcodes#icon" >}}), you can include 
 ```go
   {{ partial "icon.html" "github" }}
 ```
-
-Icons are populated using Hugo pipelines which makes them very flexible. Blowfish includes a number of built-in icons for social, links and other purposes. Check the [icon samples]({{< ref "samples/icons" >}}) page for a full list of supported icons.
 
 Custom icons can be added by providing your own icon assets in the `assets/icons/` directory of your project. The icon can then be referenced in the partial by using the SVG filename without the `.svg` extension.
 

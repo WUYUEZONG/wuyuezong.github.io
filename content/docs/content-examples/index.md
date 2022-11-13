@@ -4,7 +4,7 @@ date: 2020-08-09
 draft: false
 description: "All the partials available in Blowfish."
 slug: "content-examples"
-tags: ["content", "example"]
+# tags: ["content", "example"]
 series: ["Documentation"]
 series_order: 12
 ---
@@ -88,7 +88,7 @@ This section contains all my current projects.
 
 _In this example, the special `cascade` parameter is being used to hide the reading time on any sub-pages within this section. By doing this, any project pages will not have their reading time showing. This is a great way to override default theme parameters for an entire section without having to include them in every individual page._
 
-The [samples section]({{< ref "samples" >}}) of this site is an example of a list page.
+
 
 ### Taxonomy pages
 
@@ -178,7 +178,7 @@ title: "My First Blog Post"
 date: 2022-01-25
 description: "Welcome to my blog!"
 summary: "Learn more about me and why I am starting this blog."
-tags: ["welcome", "new", "about", "first"]
+# tags: ["welcome", "new", "about", "first"]
 ---
 _This_ is the content of my blog post.
 ```

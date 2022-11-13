@@ -4,7 +4,7 @@ date: 2020-08-13
 draft: false
 description: "Configuring the homepage layout in the Blowfish theme."
 slug: "homepage-layout"
-tags: ["homepage", "layouts", "docs"]
+# tags: ["homepage", "layouts", "docs"]
 series: ["Documentation"]
 series_order: 5
 ---
@@ -82,7 +82,6 @@ The articles listed in this section are derived from the `mainSections` setting 
 
 Blowfish was built so it would be easy to add visual support to your articles. If your familiar with Hugo article strucutre, you just need to place an image file (almost all formats are supported bue we recommend `.png` or `.jpg`) that starts with `feature*` inside your article folder. And that's it, Blowfish will then able to both use the image as a thumbnail within your website as well as for <a target="_blank" href="https://oembed.com/">oEmbed</a> cards across social platforms. 
 
-[Here]({{< ref "thumbnails" >}}) is a guide with more info and a [sample]({{< ref "thumbnail_sample" >}}) if you want to see an example.
 
 ## Card Gallery
 

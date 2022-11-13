@@ -4,7 +4,7 @@ date: 2020-08-03
 draft: false
 description: "Learn how to integrate Firebase and get dynamic data for views and likes."
 slug: "firebase-views"
-tags: ["firebase", "views", likes]
+# tags: ["firebase", "views", likes]
 series: ["Documentation"]
 series_order: 15
 ---

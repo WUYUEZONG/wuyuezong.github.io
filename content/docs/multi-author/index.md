@@ -4,7 +4,7 @@ date: 2020-08-10
 draft: false
 description: "Configure multiple authors for your articles."
 slug: "multi-author"
-tags: ["authors", "config", "docs"]
+# tags: ["authors", "config", "docs"]
 series: ["Documentation"]
 series_order: 10
 showAuthor: true
