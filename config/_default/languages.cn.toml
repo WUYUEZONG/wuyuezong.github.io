@@ -5,7 +5,7 @@ isoCode = "zh-cn"
 weight = 1
 rtl = false
 
-title = "half-fish"
+title = "a half fish"
 logo = "img/blowfish_logo_transparent.png"
 description = "记录生活～"
 # copyright = "Copy, _right?_ :thinking_face:"
@@ -13,7 +13,7 @@ description = "记录生活～"
 dateFormat = "2022.11.11"
 
 [author]
-  name = "WUYUEZONG"
+  name = "a half fish"
   image = "img/blowfish_logo.png"
   headline = "温故而知新～"
   bio = "温故而知新～"
