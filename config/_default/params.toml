@@ -9,7 +9,7 @@ colorScheme = "blowfish"
 defaultAppearance = "dark" # valid options: light or dark
 autoSwitchAppearance = true
 
-enableSearch = true
+enableSearch = false
 enableCodeCopy = true
 
 mainSections = ["docs"]
@@ -32,7 +32,7 @@ mainSections = ["docs"]
   showRecentItems = 10
   showMoreLink = true
   showMoreLinkDest = "docs"
-  cardView = true
+  cardView = false
   cardViewScreenWidth = false
   layoutBackgroundBlur = true # only used when layout equals background
 
@@ -47,8 +47,8 @@ mainSections = ["docs"]
   layoutBackgroundBlur = true # only used when heroStyle equals background
   showBreadcrumbs = true
   showDraftLabel = true
-  showEdit = true
-  editURL = "https://github.com/nunocoracao/blowfish/tree/main/exampleSite/content"
+  showEdit = false
+  editURL = ""
   editAppendPath = true
   seriesOpened = false
   showHeadingAnchors = true
@@ -77,6 +77,7 @@ mainSections = ["docs"]
 
 [sitemap]
   excludedKinds = ["taxonomy","term"]
+  # excludedKinds = ["taxonomy"]
 
 [taxonomy]
   showTermCount = true

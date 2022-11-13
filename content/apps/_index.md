@@ -1,17 +1,23 @@
 ---
-title: "Apps"
+title: "App"
 date: 2022-11-13
 
 # showDate : false
 # showDateUpdated : false
-# showHeadingAnchors : false
-# showPagination : false
+# showHeadingAnchors : true
+# showPagination : true
 # showReadingTime : false
 # showTableOfContents : true
-# showTaxonomies : false 
+# showTaxonomies : true 
 # showWordCount : false
 # showSummary : false
 # sharingLinks : false
+
+# invertPagination: true
+# cascade:
+#   showDate: false
+#   showAuthor: false
+#   invertPagination: true
 
 ---
 
