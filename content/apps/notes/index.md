@@ -1,7 +1,8 @@
 ---
 title: "Notes: 碎片笔记本使用手册"
-date: 2022-11-13
+date: 2022-11-13T20:55:37+01:00
 description: "碎片笔记本，简单的记个笔记～"
+summary: "碎片笔记本，简单的记个笔记～"
 
 tags: ["Notes", "app"]
 series: ["App"]

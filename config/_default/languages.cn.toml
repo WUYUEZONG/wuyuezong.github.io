@@ -1,7 +1,7 @@
-languageCode = "zh-cn"
+languageCode = "cn"
 languageName = "Chinese"
 displayName = "CN"
-isoCode = "zh-cn"
+isoCode = "cn"
 weight = 1
 rtl = false
 
@@ -10,7 +10,8 @@ logo = "img/logo.png"
 description = "记录生活～"
 # copyright = "Copy, _right?_ :thinking_face:"
 
-dateFormat = "2022.11.11"
+dateFormat = "2006-01-02"
+# dateFormat = "January 2, 2006"
 
 [author]
   name = "a half fish"

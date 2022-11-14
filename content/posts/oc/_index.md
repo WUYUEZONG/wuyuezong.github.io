@@ -1,11 +1,12 @@
 ---
-title: "Posts"
-date: 2022-06-13T20:55:37+01:00
-draft: false
+title: "学习Objective-C"
+date: 2022-06-30
+
+description: "学习Objective-C的相关笔记！"
 
 # showDate : true
 # showDateUpdated : false
-# showHeadingAnchors : false
+# showHeadingAnchors : true
 # showPagination : false
 # showReadingTime : false
 # showTableOfContents : true
@@ -15,4 +16,3 @@ draft: false
 # sharingLinks : false
 
 ---
-

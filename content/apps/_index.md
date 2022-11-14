@@ -2,6 +2,7 @@
 title: "App"
 date: 2022-11-13
 
+summary: "这里会展示我自己应用的相关信息"
 # showDate : false
 # showDateUpdated : false
 # showHeadingAnchors : true
@@ -11,11 +12,13 @@ date: 2022-11-13
 # showTaxonomies : true 
 # showWordCount : false
 # showSummary : false
-# sharingLinks : false
+cascade:
+    showDate: true
+    sharingLinks : false
 
 # invertPagination: true
 # cascade:
-#   showDate: false
+#   showDate: true
 #   showAuthor: false
 #   invertPagination: true
 

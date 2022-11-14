@@ -12,7 +12,7 @@ autoSwitchAppearance = true
 enableSearch = false
 enableCodeCopy = true
 
-mainSections = ["docs"]
+mainSections = ["posts"]
 # robots = ""
 
 [header]
@@ -26,21 +26,21 @@ mainSections = ["docs"]
   showScrollToTop = true
 
 [homepage]
-  layout = "custom" # valid options: page, profile, hero, card, background, custom
+  layout = "background" # valid options: page, profile, hero, card, background, custom
   homepageImage = "/img/iceland.jpg" # used in: hero, and card
-  showRecent = false
+  showRecent = true
   showRecentItems = 10
-  showMoreLink = true
-  showMoreLinkDest = "docs"
-  cardView = false
+  showMoreLink = false
+  showMoreLinkDest = "posts"
+  cardView = true
   cardViewScreenWidth = false
   layoutBackgroundBlur = true # only used when layout equals background
 
 [article]
-  showDate = false
-  showViews = true
-  showLikes = true
-  showDateUpdated = false
+  showDate = true
+  showViews = false
+  showLikes = false
+  showDateUpdated = true
   showAuthor = true
   showHero = true
   heroStyle = "background" # valid options: basic, big, background
@@ -50,7 +50,7 @@ mainSections = ["docs"]
   showEdit = false
   editURL = ""
   editAppendPath = true
-  seriesOpened = false
+  seriesOpened = true
   showHeadingAnchors = true
   showPagination = true
   invertPagination = false
@@ -67,11 +67,11 @@ mainSections = ["docs"]
   heroStyle = "background" # valid options: basic, big, background
   showBreadcrumbs = false
   showSummary = false
-  showViews = true
+  showViews = false
   showLikes = true
   showTableOfContents = true
   showCards = true
-  groupByYear = false
+  groupByYear = true
   cardView = true
   cardViewScreenWidth = false
 
