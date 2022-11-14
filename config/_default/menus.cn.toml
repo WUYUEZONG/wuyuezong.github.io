@@ -15,20 +15,20 @@
 #   pageRef = "docs"
 #   weight = 10
 
-[[main]]
-  name = "HOME"
-  pageRef = "/"
-  weight = 20
+# [[main]]
+#   name = "HOME"
+#   pageRef = "/"
+#   weight = 20
 
-[[main]]
-  name = "APP"
-  pageRef = "apps"
-  weight = 30
+# [[main]]
+#   name = "APP"
+#   pageRef = "apps"
+#   weight = 30
 
-[[main]]
-  name = "ABOUT"
-  pageRef = "/"
-  weight = 40
+# [[main]]
+#   name = "ABOUT"
+#   pageRef = "/"
+#   weight = 40
 
 # [[main]]
 #   identifier = "github"
@@ -56,3 +56,13 @@
    name = "Works"
    pageRef = "works"
    weight = 20
+
+ [[footer]]
+  name = "Apps"
+  pageRef = "apps"
+  weight = 30
+
+ [[footer]]
+  name = "Posts"
+  pageRef = "posts"
+  weight = 40
