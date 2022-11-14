@@ -7,4 +7,3 @@ title: "WUYUEZONG"
 
 **习近平**
 
-[Somethings about works]({{< ref "posts" >}})
