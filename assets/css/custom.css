@@ -1,0 +1,33 @@
+@font-face {
+    font-family: font;
+    src: url('/fonts/cjgdgmht.otf');
+}
+@font-face {
+    font-family: mi-font-l;
+    src: url('/fonts/MiSans-Light.ttf');
+}
+
+@font-face {
+    font-family: mi-font-el;
+    src: url('/fonts/MiSans-ExtraLight.ttf');
+}
+
+@font-face {
+    font-family: fcl-font;
+    src: url('/fonts/FiraCode-Light.ttf');
+}
+
+@font-face {
+    font-family: jbm-l-font;
+    src: url('/fonts/JetBrainsMono-Light.ttf');
+}
+
+html {
+    font-family: fcl-font, mi-font-el, font;
+    font-size: 12pt;
+}
+
+html pre code span {
+    font-family: fcl-font, fcl-font, mi-font-l;
+    font-size: 10pt;
+}

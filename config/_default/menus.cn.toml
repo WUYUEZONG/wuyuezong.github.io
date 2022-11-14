@@ -30,11 +30,11 @@
 #   pageRef = "/"
 #   weight = 40
 
-# [[main]]
-#   identifier = "github"
-#   pre = "github"
-#   url = "https://github.com/nunocoracao/blowfish"
-#   weight = 50
+[[main]]
+  identifier = "github"
+  pre = "github"
+  url = "https://github.com/WUYUEZONG"
+  weight = 50
 
 # [[main]]
 #   identifier = "twitter"

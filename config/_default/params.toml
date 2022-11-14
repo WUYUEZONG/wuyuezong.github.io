@@ -68,10 +68,10 @@ mainSections = ["posts"]
   showBreadcrumbs = false
   showSummary = false
   showViews = false
-  showLikes = true
-  showTableOfContents = true
+  showLikes = false
+  showTableOfContents = false
   showCards = true
-  groupByYear = true
+  groupByYear = false
   cardView = true
   cardViewScreenWidth = false
 
