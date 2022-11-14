@@ -3,9 +3,9 @@ title: "AutoreleasePool"
 date: 2022-06-30
 # draft: true
 
-tags: ["OC"]
-series: ["OC"]
-series_order: 15
+tags: ["OC", "AutoreleasePool"]
+series: ["Objc"]
+series_order: 20
 ---
 
 

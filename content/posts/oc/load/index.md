@@ -1,11 +1,11 @@
 ---
-title: "+load方法"
+title: "+load"
 date: 2022-06-30
 
 
 tags: ["OC"]
-series: ["OC"]
-series_order: 10
+series: ["Objc"]
+series_order: 8
 ---
 
 {{<alert>}}

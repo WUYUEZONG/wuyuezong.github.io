@@ -3,9 +3,9 @@ title: "定时器"
 date: 2022-06-30
 
 
-tags: ["OC"]
-series: ["OC"]
-series_order: 19
+tags: ["OC", "NSTimer"]
+series: ["Objc"]
+series_order: 17
 ---
 
 

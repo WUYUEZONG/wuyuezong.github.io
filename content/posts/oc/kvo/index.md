@@ -4,8 +4,8 @@ title: "KVO (Key-Value Observing)"
 date: 2022-11-14T16:08:48+08:00
 # draft: false
 tags: ["KVO", "OC"]
-# series: []
-# series_order: 1
+series: ["Objc"]
+series_order: 12
 
 # summary: ""
 ---

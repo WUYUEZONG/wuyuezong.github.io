@@ -3,9 +3,9 @@ title: "多线程"
 date: 2022-06-30
 draft: true
 
-tags: ["OC"]
-series: ["OC"]
-series_order: 18
+tags: ["OC", "dispatch",]
+series: ["Objc"]
+series_order: 16
 ---
 
 # 多线程类型，关系

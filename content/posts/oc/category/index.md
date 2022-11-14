@@ -2,9 +2,9 @@
 title: "Category"
 date: 2022-11-14T14:48:46+08:00
 draft: false
-tags: ["OC"]
-series: ["OC"]
-series_order: 12
+tags: ["OC", "Category"]
+series: ["Objc"]
+series_order: 7
 ---
 
 **category定义在objc-runtime-new.h中，结构如下：**

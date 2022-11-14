@@ -1,11 +1,11 @@
 ---
-title: "AssociationObject关联对象"
+title: "AssociationObject"
 date: 2022-06-30
 # draft: true
 
-tags: ["OC"]
-series: ["OC"]
-series_order: 14
+tags: ["OC", "AssociationObject"]
+series: ["Objc"]
+series_order: 11
 ---
 
 ## AssociationObject关联对象的原理

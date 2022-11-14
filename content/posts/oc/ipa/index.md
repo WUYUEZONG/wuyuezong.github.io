@@ -3,9 +3,9 @@ title: "安装包瘦身"
 date: 2022-06-30
 
 
-tags: ["OC"]
-series: ["OC"]
-series_order: 20
+tags: ["OC", "IPA"]
+series: ["Objc"]
+series_order: 23
 ---
 
 

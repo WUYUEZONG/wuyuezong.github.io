@@ -1,11 +1,11 @@
 ---
-title: "APP启动"
+title: "App Lanuch"
 date: "2022-06-13T20:55:37+01:00"
 # draft: true
 
-tags: ["OC"]
-series: ["OC"]
-series_order: 16
+tags: ["OC", "App Lanuch"]
+series: ["Objc"]
+series_order: 22
 ---
 
 ## APP启动的分类

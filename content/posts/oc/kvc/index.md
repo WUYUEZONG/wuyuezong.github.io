@@ -3,9 +3,9 @@ title: "KVC (Key-Value Coding)"
 # description: ""
 date: 2022-11-14T16:08:03+08:00
 draft: true
-# tags: []
-# series: []
-# series_order: 1
+tags: ["KVC", "OC"]
+series: ["Objc"]
+series_order: 13
 
 # summary: ""
 ---

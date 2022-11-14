@@ -3,9 +3,9 @@ title: "Objc Instance"
 # description: ""
 date: 2022-11-14T16:10:35+08:00
 draft: true
-# tags: []
-# series: []
-# series_order: 1
+tags: ["OC", "Objc Instance"]
+series: ["Objc"]
+series_order: 5
 
 # summary: ""
 ---
