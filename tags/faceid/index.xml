@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FaceID on a half fish</title><link>/tags/faceid/</link><description>Recent content in FaceID on a half fish</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/faceid/index.xml" rel="self" type="application/rss+xml"/><item><title>生物认证 TouchID/FaceID</title><link>/posts/authentication-biometrics/</link><pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate><guid>/posts/authentication-biometrics/</guid><description>事前准备> 事前准备 # 添加权限请求描述: e.g. &amp;ldquo;App需要TouchID或FaceID权限，来验证使用者是否是手机所有者&amp;rdquo;
+Privacy - Face ID Usage Description OR
+NSFaceIDUsageDescription 引入相关的库
+LocalAuthentication 引入头文件
+#import &amp;lt;LocalAuthentication/LocalAuthentication.h&amp;gt; 使用> 使用 # - (void)faceID { LAContext *context = [LAContext new]; context.</description></item></channel></rss>
