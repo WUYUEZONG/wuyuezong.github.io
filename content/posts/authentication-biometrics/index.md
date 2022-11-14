@@ -1,6 +1,17 @@
 ---
-title: 生物认证 TouchID/FaceID
-date: 2022-06-30
+
+title: "Authentication Biometrics"
+# description: ""
+date: 2022-11-14T17:40:27+08:00
+draft: false
+# tags: []
+# series: []
+# series_order: 1
+
+# summary: ""
+
+# title: 生物认证 TouchID/FaceID
+
 
 tags: ["iOS", "FaceID", "TouchID"]
 series: ["IOS"]
@@ -23,7 +34,7 @@ NSFaceIDUsageDescription
 ```plain
 LocalAuthentication
 ```
-![LocalAuthentication](../images//LocalAuthentication.png)
+![LocalAuthentication](1.png)
 
 引入头文件
 ```objectivec

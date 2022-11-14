@@ -1,6 +1,8 @@
 ---
-title: 链接与符号 Link&Symbol
-date: 2022-06-30
+# title: 链接与符号 Link&Symbol
+title: "Link and Symbol"
+# description: ""
+date: 2022-11-14T17:45:43+08:00
 
 tags: ["iOS", "Mach-O"]
 series: ["IOS"]

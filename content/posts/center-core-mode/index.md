@@ -1,7 +1,9 @@
 ---
+# title: "Center Core Mode"
+# description: ""
+date: 2022-11-14T17:43:24+08:00
 title: "Target-Action组件化方案CTMediator"
 description: "中间人模式 (CTMediator) 分析"
-date: 2022-06-30
 
 tags: ["中间人模式", "CTMediator", "iOS"]
 series: ["IOS"]
