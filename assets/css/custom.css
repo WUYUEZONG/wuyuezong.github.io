@@ -23,11 +23,16 @@
 }
 
 html {
-    font-family: fcl-font, mi-font-el, font;
+    font-family: fcl-font;
     font-size: 12pt;
+    font-weight: 300;
+}
+
+code {
+    font-family: fcl-font;
 }
 
 html pre code span {
-    font-family: fcl-font, fcl-font, mi-font-l;
+    font-family: fcl-font;
     font-size: 10pt;
 }
