@@ -13,6 +13,7 @@ draft: false
 # showWordCount : false
 # showSummary : false
 # sharingLinks : false
-
+cascade:
+    showDate : true
 ---
 

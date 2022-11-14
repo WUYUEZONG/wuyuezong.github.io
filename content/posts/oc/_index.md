@@ -1,5 +1,5 @@
 ---
-title: "学习Objective-C"
+title: "Objective-C"
 date: 2022-06-30
 
 description: "学习Objective-C的相关笔记！"

@@ -2,7 +2,7 @@
 title: "Copy & MutableCopy"
 # description: ""
 date: 2022-11-14T16:06:23+08:00
-draft: true
+
 # tags: []
 # series: []
 # series_order: 1
@@ -36,4 +36,11 @@ draft: true
 }
 ```
 
-[copy和mutableCopy](copy%E5%92%8CmutableCopy%20f091420c2401458c861f55a643afc306/copy%E5%92%8CmutableCopy%207e83f671428e4210989a80ff9dbd2243.csv)
+||copy|mutableCopy|
+|-|-|-|
+|NSString|NSString|NSMutableString|
+|NSMutableString|NSString|NSMutableString|
+|NSArray|NSArray|NSMutableArray|
+|NSMutableArray|NSArray|NSMutableArray|
+|NSDictionary|NSDictionary|NSMutableDictionary|
+|NSMutableDictionary|NSDictionary|NSMutableDictionary|

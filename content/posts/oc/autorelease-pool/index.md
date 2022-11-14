@@ -15,12 +15,12 @@ series_order: 15
 
 ## AutoreleasePoolPage内部结构
 
-- 每个`AutoreleasePoolPage`对象占用`4096`字节内存，除了用来存放它内部的成员变量，剩下的空间用来存放`autorelease`对象的地址
-- 所有的AutoreleasePoolPage对象通过双向链表的形式连接在一起
+- 每个 `AutoreleasePoolPage` 对象占用 `4096` 字节内存，除了用来存放它内部的成员变量，剩下的空间用来存放 `autorelease` 对象的地址
+- 所有的 `AutoreleasePoolPage` 对象通过双向链表的形式连接在一起
 
 ![1](1.png)
 
-## `@autoreleasepool` 作用原理
+## @autoreleasepool作用原理
 
 ```objectivec
 @autoreleasepool {

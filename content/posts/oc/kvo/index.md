@@ -1,19 +1,21 @@
 ---
-title: "KVO（Key-Value Observing）键值监听"
+title: "KVO (Key-Value Observing)"
 # description: ""
 date: 2022-11-14T16:08:48+08:00
-draft: true
-# tags: []
+# draft: false
+tags: ["KVO", "OC"]
 # series: []
 # series_order: 1
 
 # summary: ""
 ---
 
-**KVO是利用runtime的特性动态生成观察对象类的子类，然后重写被观察对象的属性的set方法。**
+{{<alert>}}
+KVO是利用runtime的特性动态生成观察对象类的子类，然后重写被观察对象的属性的set方法。
+{{</alert>}}
 
 > 可以用于监听某个对象属性值的改
-> 
+
 
 ```objectivec
 // 如何设置属性的KVO
@@ -37,32 +39,61 @@ draft: true
 }
 ```
 
-# KVO的本质（内部实现）
+## KVO的本质（内部实现）
 
-## 打印对象isa地址、name类名
+### 打印对象isa地址、name类名
 
 在设置监听前后打印person1，2的isa地址。发现person1在设置完监听后地址发生了改变；在设置监听前后打印person1，2的类名。发现person1在设置完监听后改变为：NSKVONotifying_Person；
 
-![KVO%EF%BC%88Key-Value%20Observing%EF%BC%89%E9%94%AE%E5%80%BC%E7%9B%91%E5%90%AC%20e5bb7ae262a146a190def633869f8860/Untitled.png](KVO%EF%BC%88Key-Value%20Observing%EF%BC%89%E9%94%AE%E5%80%BC%E7%9B%91%E5%90%AC%20e5bb7ae262a146a190def633869f8860/Untitled.png)
+```objc
+// person1->isa: 0x10bcb0710
+NSLog(@"person1->isa: %p", object_getClass(_person1));
+// person2->isa: 0x10bcb0710
+NSLog(@"person2->isa: %p", object_getClass(_person2));
+// person1 class name: Person
+NSLog(@"person1 class name: %p", object_getClass(object_getClass(_person1)));
+// person2 class name: Person
+NSLog(@"person2 class name: %p", object_getClass(object_getClass(_person2)));
 
-## 小结
+NSKeyValueObservingOptions options = NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;
+[self.person1 addObserver:self forKeyPath:@"age" options:options context:@"附加信息"];
+
+// person1->isa: 0x6000022a03f0
+NSLog(@"person1->isa: %p", object_getClass(_person1));
+// person2->isa: 0x10bcb0710
+NSLog(@"person2->isa: %p", object_getClass(_person2));
+// person1 class name: NSKVONotifying_Person
+NSLog(@"person1 class name: %p", object_getClass(object_getClass(_person1)));
+// person2 class name: Person
+NSLog(@"person2 class name: %p", object_getClass(object_getClass(_person2)));
+
+// person1 class`s class name: Person
+NSLog(@"person1 class`s class name: %@", object_getClass(object_getClass(person1)).superclass);
+```
+
+### 小结
 
 可以看出，程序在`runtime`的时候动态生成了 `NSKVONotifying_Person` ，`NSKVONotifying_Person` 继承于 `Person`，当改变 age 的值时，即调用 `setAge:` 方法。`NSKVONotifying_Person` 重写了 `setAge：`并做了其他事情。具体做了那些事可以猜测：
 
-![KVO%EF%BC%88Key-Value%20Observing%EF%BC%89%E9%94%AE%E5%80%BC%E7%9B%91%E5%90%AC%20e5bb7ae262a146a190def633869f8860/Untitled%201.png](KVO%EF%BC%88Key-Value%20Observing%EF%BC%89%E9%94%AE%E5%80%BC%E7%9B%91%E5%90%AC%20e5bb7ae262a146a190def633869f8860/Untitled%201.png)
+```objc
+- (void)setAge:(int)age {
+  [_person1 willChangeValueForKey:@"age"];
+  [super setAge:age];
+  [_person1 didChangeValueForKey:@"age"];
+}
+```
 
 `didChangeValueForKey:`内部会调用`observer`的`observeValueForKeyPath:ofObject:change:context:`方法
 
-<aside>
-💡 **即：KVO是利用runtime的特性动态生成观察对象类的子类，然后重写被观察对象的属性的set方法。**
+{{<alert>}}
+即：KVO是利用runtime的特性动态生成观察对象类的子类，然后重写被观察对象的属性的set方法。
+{{</alert>}}
 
-</aside>
-
-## 如何手动触发KVO？
+### 如何手动触发KVO？
 
 手动调用`willChangeValueForKey:` 和`didChangeValueForKey:` 。只调用`didChangeValueForKey:` 是无法触发的。
 
-# 可能的使用场景（这几个都是什么意思？）
+## 使用场景
 
 - 实现上下拉刷新控件 content offset
 - webview 混合排版 content size

@@ -39,4 +39,6 @@ series_order: 10
     3. **(*load_method)(cls, SEL_load)**
     
 
-**+load方法是根据方法地址直接调用，并不是经过`objc_msgSend`函数调用**
+{{<alert>}}
++load方法是根据方法地址直接调用，并不是经过`objc_msgSend`函数调用
+{{</alert>}}

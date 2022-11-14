@@ -17,23 +17,23 @@ series_order: 12
 
 ![0](0.png)
 
-# 知识点
+## 知识点
 
-## 后编译的先调用
+### 后编译的先调用
 
 多个分类中如果存在相同的方法，编译顺序决定调用那个。`后编译的先调用`。
 
 ![1](1.png)
 
-## Xcode中控制编译顺序
+### Xcode中控制编译顺序
 
 ![2](2.png)
 
-## Category和Class Extension的区别是什么？
+### Category和Class Extension的区别是什么？
 
 Class Extension在编译的时候，它的数据就已经包含在类信息中，Category是在运行时，才会将数据合并到类信息中。
 
-## 源码解读顺序
+### 源码解读顺序
 
 **objc-os.mm**
 
@@ -49,7 +49,7 @@ Class Extension在编译的时候，它的数据就已经包含在类信息中�
 4. attachLists
 5. realloc、memmove、 memcpy
 
-# 其他可阅读
+## 其他可阅读
 
 [OC 底层探索 - Category 和 Extension](https://juejin.cn/post/6844904067987144711)
 
@@ -59,7 +59,7 @@ Class Extension在编译的时候，它的数据就已经包含在类信息中�
 
 ![4](4.png)
 
-# Category的使用
+## Category的使用
 
 新建文件时选择Category类型
 
@@ -74,7 +74,7 @@ Class Extension在编译的时候，它的数据就已经包含在类信息中�
 @end
 ```
 
-# Extension（扩展）
+## Extension（扩展）
 
 一般的时候，Extension都是写在.m文件中，不单独建立一个扩展文件，且必须写在@implementation的上方，否则编译会报错。
 

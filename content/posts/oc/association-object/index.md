@@ -95,8 +95,29 @@ objc_getAssociatedObject(obj, @selector(getter))
 
 ### 关联对象方法中 “**objc_AssociationPolicy**” 说明
 
-[objc_AssociationPolicy参数说明](AssociationObject%E5%85%B3%E8%81%94%E5%AF%B9%E8%B1%A1%20c5f6e7a1551d46a689cfc461f28ab8ed/objc_AssociationPolicy%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E%205427096493b240628436ca1a9fe670ea.csv)
+|objc_AssociationPolicy|对应修饰符|
+|-|-|
+|OBJC_ASSOCIATION_ASSIGN|assign|
+|OBJC_ASSOCIATION_COPY|copy atomic|
+|OBJC_ASSOCIATION_RETAIN|strong atomic|
+|OBJC_ASSOCIATION_COPY_NONATOMIC|copy nonatomic|
+|OBJC_ASSOCIATION_RETAIN_NONATOMIC|strong nonatomic|
 
 ### 通过关联对象实现分类（Category）属性的get、set方法。
 
-![2](2.png)
+```objc
+#import "Person+Test.h"
+#import <objc/runtime.h>
+
+@implementation Person(Test)
+- (void)setAge:(int)age {
+	objc_setAssociatedObject(self, 
+							 @selector(age), 
+							 @(age), 
+							 OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+- (int)age {
+	return [objc_getAssociatedObject(self, _cmd) intValue];
+}
+@end
+```

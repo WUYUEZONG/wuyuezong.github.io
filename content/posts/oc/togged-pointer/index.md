@@ -10,6 +10,6 @@ draft: true
 # summary: ""
 ---
 
-对NSNumber、NSString、NSDate优化。
+对 `NSNumber、NSString、NSDate` 优化。
 
 当以上类型对象需要存储的数据没有超出固定分配的字节，该对象可以被看作是简单数据类型；而当对象需要存储的数据超过了固定字节，该对象就会变成真正的对象。

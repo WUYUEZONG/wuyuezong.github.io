@@ -1,8 +1,8 @@
 ---
 title: "封装AI算法升级或切换"
 date: 2022-11-13
-# description: "这个组件是根据UIPageViewController代理实现的页面管理器"
-showDate : false
+description: "这个组件是根据UIPageViewController代理实现的页面管理器"
+
 tags: ['WorkNote']
 ---
 
