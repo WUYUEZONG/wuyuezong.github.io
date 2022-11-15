@@ -5,8 +5,8 @@ title: "High Performance Autolayout"
 date: 2022-11-14T17:44:45+08:00
 
 tags: ["AutoLayout", "WWDC", "iOS"]
-series: ["IOS"]
-series_order: 5
+# series: ["IOS"]
+# series_order: 5
 ---
 
 以下是看完 [WWDC18: High Performance Auto Layout](https://developer.apple.com/videos/play/wwdc2018/220/) 的简单总结。

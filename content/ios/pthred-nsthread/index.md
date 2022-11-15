@@ -3,8 +3,8 @@ title: "pthread / NSThread"
 date: 2022-06-30
 
 tags: ["iOS", "OC", "线程"]
-series: ["IOS"]
-series_order: 2
+# series: ["IOS"]
+# series_order: 2
 ---
 
 
