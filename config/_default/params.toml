@@ -45,7 +45,7 @@ mainSections = ["posts","ios"]
   showHero = true
   heroStyle = "background" # valid options: basic, big, background
   layoutBackgroundBlur = true # only used when heroStyle equals background
-  showBreadcrumbs = true
+  showBreadcrumbs = false
   showDraftLabel = true
   showEdit = false
   editURL = ""
@@ -58,7 +58,7 @@ mainSections = ["posts","ios"]
   showTableOfContents = true
   showTaxonomies = true 
   showAuthorsBadges = true 
-  showWordCount = false
+  showWordCount = true
   showSummary = true
   sharingLinks = [ "linkedin", "twitter", "whatsapp", "pinterest", "reddit", "facebook", "email"]
 
@@ -83,13 +83,13 @@ mainSections = ["posts","ios"]
   showTermCount = true
 
 [firebase]
-  apiKey = "AIzaSyB5tqlqDky77Vb4Tc4apiHV4hRZI18KGiY"
-  authDomain = "blowfish-21fff.firebaseapp.com"
-  projectId = "blowfish-21fff"
-  storageBucket = "blowfish-21fff.appspot.com"
-  messagingSenderId = "60108104191"
-  appId = "1:60108104191:web:039842ebe1370698b487ca"
-  measurementId = "G-PEDMYR1V0K"
+  apiKey = "AIzaSyCQdYYJsqfcjy2_NypuCRgOJczG9RDZy7A"
+  authDomain = "homepage-f82a2.firebaseapp.com"
+  projectId = "homepage-f82a2"
+  storageBucket = "homepage-f82a2.appspot.com"
+  messagingSenderId = "574711004803"
+  appId = "1:574711004803:web:c313a1a151521a33c4a5b6"
+  measurementId = "G-H6WB2ZNB2J"
 
 [fathomAnalytics]
   # site = "ABC12345"
