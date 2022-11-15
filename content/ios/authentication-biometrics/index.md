@@ -14,8 +14,8 @@ draft: false
 
 
 tags: ["iOS", "FaceID", "TouchID"]
-series: ["IOS"]
-series_order: 3
+# series: ["IOS"]
+# series_order: 3
 ---
 
 # 事前准备

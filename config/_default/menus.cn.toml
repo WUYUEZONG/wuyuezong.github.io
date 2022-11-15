@@ -66,3 +66,13 @@
   name = "Posts"
   pageRef = "posts"
   weight = 40
+
+ [[footer]]
+  name = "iOS"
+  pageRef = "ios"
+  weight = 50
+
+#  [[footer]]
+#   name = "OC"
+#   pageRef = "oc"
+#   weight = 50

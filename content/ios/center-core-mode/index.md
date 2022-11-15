@@ -6,8 +6,8 @@ title: "Target-Action组件化方案CTMediator"
 description: "中间人模式 (CTMediator) 分析"
 
 tags: ["中间人模式", "CTMediator", "iOS"]
-series: ["IOS"]
-series_order: 4
+# series: ["IOS"]
+# series_order: 4
 ---
 {{<alert>}}
 中间管理者，与模块之间约定好的模块**名称**、**方法名称**以及**参数**，通过 `Runtime` 方法，调用对应对象的方法来获取想要的对象。

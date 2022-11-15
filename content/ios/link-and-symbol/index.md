@@ -5,8 +5,8 @@ title: "Link and Symbol"
 date: 2022-11-14T17:45:43+08:00
 
 tags: ["iOS", "Mach-O"]
-series: ["IOS"]
-series_order: 8
+# series: ["IOS"]
+# series_order: 8
 ---
 
 # Mach-O
