@@ -58,7 +58,7 @@ mainSections = ["posts","ios"]
   showTableOfContents = true
   showTaxonomies = true 
   showAuthorsBadges = true 
-  showWordCount = true
+  showWordCount = false
   showSummary = true
   sharingLinks = [ "linkedin", "twitter", "whatsapp", "pinterest", "reddit", "facebook", "email"]
 

@@ -37,9 +37,10 @@
   weight = 50
 
 # [[main]]
-#   identifier = "twitter"
-#   pre = "twitter"
-#   url = "https://twitter.com/burufugu"
+#   identifier = "apple"
+#   pre = "apple"
+#   pageRef = "ios"
+#   # url = "https://twitter.com/burufugu"
 #   weight = 60
 
 
