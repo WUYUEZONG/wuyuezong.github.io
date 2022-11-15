@@ -2,7 +2,7 @@
 title: "Objective-C的本质"
 # description: ""
 date: 2022-11-14T16:09:26+08:00
-draft: true
+# draft: true
 tags: ["OC", "Objc"]
 series: ["Objc"]
 series_order: 4
@@ -10,14 +10,19 @@ series_order: 4
 # summary: ""
 ---
 
-<aside>
-💡 Objective-C底层实现其实都是C、C++代码，Objective-C的面向对象都是基于C、C++的数据结构实现的，Objective-C的对象、类主要是基于C、C++的结构体实现的。
+{{<alert>}}
+Objective-C底层实现其实都是C、C++代码，Objective-C的面向对象都是基于C、C++的数据结构实现的，Objective-C的对象、类主要是基于C、C++的结构体实现的。
+{{</alert>}}
 
-</aside>
 
 **Objective-C被翻译的过程**
+{{< mermaid >}}
+graph LR;
+A[OC]-->B[C\C++];
+B-->C[汇编语言];
+C-->D[机器语言]
+{{< /mermaid >}}
 
-![Objective-C%E7%9A%84%E6%9C%AC%E8%B4%A8%20f8b9fed4e31a43eab9cdc53d079edaa9.jpeg](Objective-C%E7%9A%84%E6%9C%AC%E8%B4%A8%20f8b9fed4e31a43eab9cdc53d079edaa9.jpeg)
 
 **Objective-C代码转换为C、C++代码**
 
@@ -36,7 +41,21 @@ NSObject *obj = [[NSObject alloc] init];
 
 **OC中对象至少会被分配16个字节的空间（64位）；32位则是8个字节**
 
-[OC基本数据类型所占字节数对比](Objective-C%E7%9A%84%E6%9C%AC%E8%B4%A8%20f8b9fed4e31a43eab9cdc53d079edaa9/OC%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%89%80%E5%8D%A0%E5%AD%97%E8%8A%82%E6%95%B0%E5%AF%B9%E6%AF%94%205e436cb211f1494a8c424b4663a5d9c2.csv)
+|C|OC|32Bit|64Bit|
+|-|-|-|-|
+|bool|BOOL(64)|1|1|
+|char|int8_t, BOOL(32)|1|1|
+|unsigned char|boolean|1|1|
+|short|int16_t|2|2|
+|unsigned short|unichar|2|2|
+|int|int32_t,NSInteger,boolean|4|4|
+|unsigned int|boolean_t,NSUInteger|4|4|
+|long|NSInteger|4|8|
+|unsigned long|NSUInteger|4|8|
+|long long|int64_t|8|8|
+|float|CGFloat(32)|4|4|
+|double|CGFloat(64)|8|8|
+
 
 ## 参考
 
@@ -76,10 +95,7 @@ po：打印对象
     - Memory read/数量格式字节数 内存地址
     - x/数量格式字节数 内存地址
 
-<aside>
 💡 例如：x/3xw 0x10010
-
-</aside>
 
 - **格式**
     - x是16进制，f是浮点数，d是10进制

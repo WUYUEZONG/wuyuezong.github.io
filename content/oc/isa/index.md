@@ -2,7 +2,7 @@
 title: "Isa"
 # description: ""
 date: 2022-11-14T16:07:25+08:00
-draft: false
+# draft: false
 tags: ["OC", "ISA"]
 series: ["Objc"]
 series_order: 6
@@ -39,8 +39,8 @@ isa相当于oc对象中的id，oc是调用方法是通过objc_msgSend(,)消息�
 - meta-class的isa指向基类（NSObject）的meta-class
 - class的superclass指向父类的class，如果没有父类，superclass的指针为nil
 - meta-class的superclas指向父类的meta-class，基类的meta-class的superclass指向基类的class
-- **instance调用对象方法的轨迹：**isa找到class，如果方法不存在，就通过superclass找到父类的class，直到找到为止，如果最后没有找到，就会报错：unrecognized selector
-- **class调用类方法轨迹：**isa找到meta-class，方法不存在，就通过superclass找父类，如果一直到基类的mete-class都没找到，则会找到基类的class，如果有则调用对象方法，没有则：unrecognized selector
+- **instance调用对象方法的轨迹：** isa找到class，如果方法不存在，就通过superclass找到父类的class，直到找到为止，如果最后没有找到，就会报错：unrecognized selector
+- **class调用类方法轨迹：** isa找到meta-class，方法不存在，就通过superclass找父类，如果一直到基类的mete-class都没找到，则会找到基类的class，如果有则调用对象方法，没有则：unrecognized selector
 - 
 
 {{<alert>}}

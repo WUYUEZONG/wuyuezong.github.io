@@ -45,7 +45,7 @@ mainSections = ["posts","ios"]
   showHero = true
   heroStyle = "background" # valid options: basic, big, background
   layoutBackgroundBlur = true # only used when heroStyle equals background
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showDraftLabel = true
   showEdit = false
   editURL = ""
@@ -65,13 +65,13 @@ mainSections = ["posts","ios"]
 [list]
   showHero = true
   heroStyle = "background" # valid options: basic, big, background
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showSummary = false
   showViews = false
   showLikes = false
   showTableOfContents = false
   showCards = true
-  groupByYear = false
+  groupByYear = true
   cardView = true
   cardViewScreenWidth = false
 

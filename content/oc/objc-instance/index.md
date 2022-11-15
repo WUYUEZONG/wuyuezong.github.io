@@ -2,7 +2,7 @@
 title: "Objc Instance"
 # description: ""
 date: 2022-11-14T16:10:35+08:00
-draft: true
+# draft: true
 tags: ["OC", "Objc Instance"]
 series: ["Objc"]
 series_order: 5
@@ -13,7 +13,11 @@ series_order: 5
 
 ---
 
-[oc对象](OC%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%86%E7%B1%BB%20418f3e23d78442c99e723784c86eb114/oc%E5%AF%B9%E8%B1%A1%207198b5cb8fca4a4a92a2ca411309a78e.csv)
+|oc对象|在内存中存储的东西|
+|-|-|
+|instance|isa, _property(value)|
+|class|isa, property, function, protocol, _property, superclass|
+|meta-class|isa, superclass, class function|
 
 # instance对象（实例对象）
 
