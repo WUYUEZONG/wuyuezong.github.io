@@ -1,8 +1,8 @@
 @font-face {
-    font-family: font;
-    src: url('/fonts/cjgdgmht.otf');
+    font-family: kcf;
+    src: url('/fonts/Kingsoft_Cloud_Font.ttf');
 }
-@font-face {
+/* @font-face {
     font-family: mi-font-l;
     src: url('/fonts/MiSans-Light.ttf');
 }
@@ -10,6 +10,11 @@
 @font-face {
     font-family: mi-font-el;
     src: url('/fonts/MiSans-ExtraLight.ttf');
+} */
+
+@font-face {
+    font-family: nkyn;
+    src: url('/fonts/Nickainley-Normal.ttf');
 }
 
 @font-face {
@@ -18,14 +23,22 @@
 }
 
 @font-face {
-    font-family: jbm-l-font;
-    src: url('/fonts/JetBrainsMono-Light.ttf');
+    font-family: oss-bold;
+    src: url('/fonts/OstrichSans-Bold.otf');
 }
 
 html {
-    /* font-family: fcl-font; */
-    font-size: 12pt;
+    font-family: fcl-font;
+    /* font-size: 12pt; */
     /* font-weight: 300; */
+}
+
+
+#nav-title-wyz, 
+#footer-author-name, 
+#copy-right-author, 
+#homepage-author {
+    font-family: nkyn;
 }
 
 code {
