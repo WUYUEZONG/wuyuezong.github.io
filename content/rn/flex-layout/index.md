@@ -2,7 +2,7 @@
 title: React Native Flexbox
 date: 2022-06-30
 
-tags: ["Flexbox"]
+tags: ["RN","Flexbox"]
 series: ["RN"]
 series_order: 1
 ---
