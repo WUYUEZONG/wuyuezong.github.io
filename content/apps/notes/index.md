@@ -5,9 +5,11 @@ description: "碎片笔记本，简单的记个笔记～"
 summary: "碎片笔记本，简单的记个笔记～"
 
 tags: ["Notes", "app"]
-series: ["App"]
-series_order: 1
+# series: ["App"]
+# series_order: 1
 ---
+
+<img src="0.png" style="width: 128pt; border-radius: 20pt;"/>
 
 > 碎片笔记本
 

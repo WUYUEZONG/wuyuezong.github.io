@@ -6,9 +6,11 @@ description: "方便简单的找到一个壁纸～"
 summary: "方便简单的找到一个壁纸～"
 
 tags: ["Upaper", "app"]
-series: ["App"]
-series_order: 2
+# series: ["App"]
+# series_order: 2
 ---
+
+<img src="0.png" style="width: 128pt; border-radius: 20pt;"/>
 
 ## 隐私政策
 
