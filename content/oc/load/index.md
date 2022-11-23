@@ -6,6 +6,8 @@ date: 2022-06-30
 tags: ["OC"]
 series: ["Objc"]
 series_order: 8
+
+summary: "+load是runtime加载类、分类时调用（只会调用1次）+load是根据函数地址直接调用的。"
 ---
 
 {{<alert>}}

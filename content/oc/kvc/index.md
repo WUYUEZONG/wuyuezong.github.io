@@ -7,7 +7,7 @@ tags: ["KVC", "OC"]
 series: ["Objc"]
 series_order: 13
 
-# summary: ""
+summary: "使用KVC，不管是修改成员变量还是属性的值都会触发KVO。"
 ---
 
 

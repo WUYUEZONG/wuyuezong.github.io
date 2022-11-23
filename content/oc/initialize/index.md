@@ -6,6 +6,8 @@ date: 2022-06-30
 tags: ["OC"]
 series: ["Objc"]
 series_order: 9
+
+summary: "initialize是类第一次接收到消息时调用的( [类 alloc]的时候)，每个类只会调用initialize一次（父类的initialize方法可能会被多调用），initialize是通过objc_msgSend调用的。"
 ---
 
 {{<alert>}}

@@ -7,7 +7,7 @@ tags: ["OC", "Objc"]
 series: ["Objc"]
 series_order: 4
 
-# summary: ""
+summary: "Objective-C底层实现其实都是C、C++代码，Objective-C的面向对象都是基于C、C++的数据结构实现的，Objective-C的对象、类主要是基于C、C++的结构体实现的。"
 ---
 
 {{<alert>}}

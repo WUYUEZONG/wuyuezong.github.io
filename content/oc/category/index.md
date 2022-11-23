@@ -5,6 +5,8 @@ draft: false
 tags: ["OC", "Category"]
 series: ["Objc"]
 series_order: 7
+
+summary: "所以定义在分类中的属性、对象方法、类方法、协议等数据会被编译成和 `class` 对象中一样的数据类型，只使用了新的变量存储。在 `runtime`时，分类中的数据（属性、方法、协议）会被合并到原来的类、元类中。所以对象调用分类中的数据（属性、方法、协议）理论上是和调用类中的方法是一致的（`isa`）。"
 ---
 
 **category定义在objc-runtime-new.h中，结构如下：**

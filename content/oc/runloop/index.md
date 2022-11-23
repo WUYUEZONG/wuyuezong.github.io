@@ -7,7 +7,7 @@ tags: ["Runloop", "OC"]
 series: ["Objc"]
 series_order: 15
 
-# summary: ""
+summary: "`RunLoop`可以简单理解为，让程序保持运行的一个`while`循环，这个循环内监听各种事件（如触摸事件、`performSelector`、定时器`NSTimer`等），没有事件的时候睡眠，从而有效的利用CPU（只有在有事件的时候才用CPU，没事件的时候睡眠）"
 ---
 
 

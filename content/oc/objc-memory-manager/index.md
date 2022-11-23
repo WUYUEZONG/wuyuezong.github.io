@@ -7,7 +7,7 @@ tags: ["OC"]
 series: ["Objc"]
 series_order: 19
 
-# summary: ""
+summary: "内存泄漏：该释放的对象没有释放。"
 ---
 # OC对象的内存管理
 

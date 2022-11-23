@@ -7,7 +7,7 @@ tags: ["KVO", "OC"]
 series: ["Objc"]
 series_order: 12
 
-# summary: ""
+summary: "KVO是利用runtime的特性动态生成观察对象类的子类，然后重写被观察对象的属性的set方法。"
 ---
 
 {{<alert>}}

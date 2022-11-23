@@ -6,6 +6,8 @@ date: 2022-06-30
 tags: ["OC", "IPA"]
 series: ["Objc"]
 series_order: 23
+
+summary: "安装包瘦身"
 ---
 
 

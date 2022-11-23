@@ -6,6 +6,9 @@ date: "2022-06-13T20:55:37+01:00"
 tags: ["OC", "App Lanuch"]
 series: ["Objc"]
 series_order: 22
+
+summary: "APP启动介绍与优化"
+
 ---
 
 ## APP启动的分类

@@ -7,7 +7,7 @@ tags: ["Copy", "MutableCopy", "OC"]
 series: ["Objc"]
 series_order: 2
 
-# summary: ""
+summary: "Copy & MutableCopy / 浅拷贝和深拷贝的解释"
 ---
 
 - `copy` 是复制出不可变对象

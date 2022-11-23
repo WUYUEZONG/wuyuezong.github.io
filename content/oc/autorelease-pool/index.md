@@ -6,6 +6,8 @@ date: 2022-06-30
 tags: ["OC", "AutoreleasePool"]
 series: ["Objc"]
 series_order: 20
+
+summary: "自动释放池的原理与使用"
 ---
 
 

@@ -6,6 +6,8 @@ date: 2022-06-30
 tags: ["OC"]
 series: ["OC"]
 series_order: 3
+
+summary: "`@synthesize`是给属性添加别名，并生成get、set方法（默认使用）`@dynamic`是告诉编译器不要生成getter、setter方法。"
 ---
 
 `@synthesize`是给属性添加别名，并生成get、set方法（默认使用）

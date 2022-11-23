@@ -7,7 +7,7 @@ tags: ["OC", "STRONG", "WEAK", "COPY"]
 series: ["Objc"]
 series_order: 1
 
-# summary: ""
+summary: "Automatic Reference Counting(ARC)技术是用于OC对象的内存管理。即在适当的时候对OC对象retain和release操作。"
 ---
 **strong / weak / copy(ARC环境)**
 

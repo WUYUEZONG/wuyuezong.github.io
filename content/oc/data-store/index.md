@@ -6,6 +6,8 @@ date: 2022-06-30
 tags: ["OC", "Cache", "Data Storage"]
 series: ["Objc"]
 series_order: 24
+
+summary: "首先了解以下应用沙盒文件夹，了解每个文件夹的具体作用，就能更方便于我们如何存储应用生成的数据。"
 ---
 
 

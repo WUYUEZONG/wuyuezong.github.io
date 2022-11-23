@@ -6,6 +6,8 @@ date: 2022-06-30
 tags: ["OC", "Block"]
 series: ["Objc"]
 series_order: 10
+
+summary: "`block`本质上也是一个OC对象，它内部也有个`isa指针`，`block`是封装了函数调用以及函数调用环境的OC对象。"
 ---
 
 ## Block的本质

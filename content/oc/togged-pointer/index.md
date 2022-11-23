@@ -7,7 +7,7 @@ tags: ["OC"]
 series: ["Objc"]
 series_order: 18
 
-# summary: ""
+summary: "对 `NSNumber、NSString、NSDate` 优化。"
 ---
 
 对 `NSNumber、NSString、NSDate` 优化。

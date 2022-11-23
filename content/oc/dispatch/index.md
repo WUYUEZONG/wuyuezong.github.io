@@ -6,6 +6,8 @@ draft: true
 tags: ["OC", "dispatch",]
 series: ["Objc"]
 series_order: 16
+
+summary: "多线程"
 ---
 
 # 多线程类型，关系

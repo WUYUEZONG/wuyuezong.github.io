@@ -7,7 +7,7 @@ tags: ["OC", "ISA"]
 series: ["Objc"]
 series_order: 6
 
-# summary: ""
+summary: "isa相当于oc对象中的id，oc是调用方法是通过objc_msgSend(,)消息机制，它要通过isa找到对应的属性、方法、协议等。"
 ---
 
 ![0](0.png)

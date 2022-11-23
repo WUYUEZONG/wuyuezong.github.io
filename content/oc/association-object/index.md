@@ -6,6 +6,8 @@ date: 2022-06-30
 tags: ["OC", "AssociationObject"]
 series: ["Objc"]
 series_order: 11
+
+summary: "关联对象的原理与使用"
 ---
 
 ## AssociationObject关联对象的原理
