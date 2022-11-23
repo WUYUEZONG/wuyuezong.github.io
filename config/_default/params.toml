@@ -12,7 +12,7 @@ autoSwitchAppearance = true
 enableSearch = false
 enableCodeCopy = true
 
-mainSections = ["posts","ios"]
+mainSections = ["posts"]
 # robots = ""
 
 [header]
@@ -34,7 +34,7 @@ mainSections = ["posts","ios"]
   showMoreLinkDest = "posts"
   cardView = true
   cardViewScreenWidth = false
-  layoutBackgroundBlur = true # only used when layout equals background
+  layoutBackgroundBlur = false # only used when layout equals background
 
 [article]
   showDate = true
