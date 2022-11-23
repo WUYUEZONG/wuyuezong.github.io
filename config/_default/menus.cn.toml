@@ -73,7 +73,7 @@
   pageRef = "ios"
   weight = 50
 
-#  [[footer]]
-#   name = "OC"
-#   pageRef = "oc"
-#   weight = 50
+ [[footer]]
+  name = "Study"
+  pageRef = "study"
+  weight = 60
