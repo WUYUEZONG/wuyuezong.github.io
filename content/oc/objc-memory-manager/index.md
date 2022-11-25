@@ -9,10 +9,8 @@ series_order: 19
 
 summary: "内存泄漏：该释放的对象没有释放。"
 ---
-# OC对象的内存管理
+## OC对象的内存管理
 
-# MRC
+## MRC
 
 内存泄漏：该释放的对象没有释放。
-
-[copy和mutableCopy](copy%E5%92%8CmutableCopy%20f091420c2401458c861f55a643afc306.md)
