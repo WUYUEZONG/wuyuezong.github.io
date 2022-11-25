@@ -16,12 +16,12 @@
 </span></span><span class=line><span class=cl>    <span class=c1>// 构造函数
 </span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kd>public</span> <span class=nf>Array</span><span class=o>(</span><span class=kt>int</span> <span class=n>capacity</span><span class=o>)</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>        <span class=n>data</span> <span class=o>=</span> <span class=k>new</span> <span class=kt>int</span><span class=o>[</span><span class=n>capacity</span><span class=o>];</span>
-</span></span><span class=line><span class=cl>        <span class=n>size</span> <span class=o>=</span> <span class=n>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=n>size</span> <span class=o>=</span> <span class=mi>0</span><span class=o>;</span>
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=c1>// 无参构造函数，默认capacity=10
 </span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kd>public</span> <span class=nf>Array</span><span class=o>()</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>(</span><span class=n>10</span><span class=o>);</span>
+</span></span><span class=line><span class=cl>        <span class=k>this</span><span class=o>(</span><span class=mi>10</span><span class=o>);</span>
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=c1>// 获取数组个数
@@ -36,7 +36,7 @@
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=c1>// 返回数组是否为空
 </span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>isEmpty</span><span class=o>()</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>size</span> <span class=o>==</span> <span class=n>0</span><span class=o>;</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>size</span> <span class=o>==</span> <span class=mi>0</span><span class=o>;</span>
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=o>}</span>
@@ -49,8 +49,8 @@
 </span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kd>public</span> <span class=nf>add</span><span class=o>(</span><span class=kt>int</span> <span class=n>index</span><span class=o>,</span> <span class=kt>int</span> <span class=n>e</span><span class=o>)</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>        <span class=c1>// 将想要插入的位置开始的元素都向后位移一位
-</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>size</span> <span class=o>-</span> <span class=n>1</span><span class=o>;</span> <span class=n>i</span> <span class=o>&gt;=</span> <span class=n>index</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span>
-</span></span><span class=line><span class=cl>            <span class=n>data</span><span class=o>[</span><span class=n>i</span><span class=o>+</span><span class=n>1</span><span class=o>]</span> <span class=o>=</span> <span class=n>data</span><span class=o>[</span><span class=n>i</span><span class=o>];</span>
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=k>for</span> <span class=o>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>size</span> <span class=o>-</span> <span class=mi>1</span><span class=o>;</span> <span class=n>i</span> <span class=o>&gt;=</span> <span class=n>index</span><span class=o>;</span> <span class=n>i</span><span class=o>++)</span>
+</span></span><span class=line><span class=cl>            <span class=n>data</span><span class=o>[</span><span class=n>i</span><span class=o>+</span><span class=mi>1</span><span class=o>]</span> <span class=o>=</span> <span class=n>data</span><span class=o>[</span><span class=n>i</span><span class=o>];</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>        <span class=c1>// 插入元素后对应的个数需要加1
 </span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>size</span><span class=o>++;</span>
