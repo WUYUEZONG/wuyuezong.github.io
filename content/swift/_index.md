@@ -29,3 +29,9 @@ String
 
 Bool
 
+Tuple  
+```swift
+let allen = (name: "allen", height: 170)
+let (_, height) = allen
+print("allen height", height)
+```
