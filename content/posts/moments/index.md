@@ -14,6 +14,12 @@ summary: "片刻所想，可以简单，又或者囫囵，都可以被记忆"
 
 ---
 
+2022-12-01 
+
+对于Mac鼠标或触摸板的用户[Swish](https://highlyopinionated.co/swish)是强烈推荐的一款通过手势简化操作的应用。
+
+---
+
 2022-11-29  
 <small>昨夜·雨🌧️</small>
 
