@@ -21,10 +21,14 @@
 /* Rosseta-3 */
 /* Simpel-Medium-2 */
 /* Techna-Sans-Regular-2 */
-/*  */
+@font-face {
+    font-family: mainEnFont;
+    src: url('/fonts/Open-Sans-2.ttf');
+}
+
 @font-face {
     font-family: mainFont;
-    src: url('/fonts/Open-Sans-2.ttf');
+    src: url('/fonts/cejk0401.ttf');
 }
 
 
@@ -32,7 +36,7 @@
 html {
     font-family:  mainFont;
     /* font-size: 12pt; */
-    font-weight: 300;
+    /* font-weight: 300; */
 }
 
 

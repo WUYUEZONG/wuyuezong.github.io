@@ -16,8 +16,8 @@ dateFormat = "2006-01-02"
 [author]
   name = "a half fish"
   image = ""
-  headline = "温故而知新～"
-  bio = "温故而知新～"
+  headline = ""
+  bio = ""
   links = [
     # { twitter = "https://twitter.com/burufugu" },
     { github = "https://github.com/WUYUEZONG" },
