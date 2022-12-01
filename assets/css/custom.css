@@ -1,36 +1,38 @@
-@font-face {
-    font-family: kcf;
-    src: url('/fonts/Kingsoft_Cloud_Font.ttf');
-}
-/* @font-face {
-    font-family: mi-font-l;
-    src: url('/fonts/MiSans-Light.ttf');
-}
 
-@font-face {
-    font-family: mi-font-el;
-    src: url('/fonts/MiSans-ExtraLight.ttf');
-} */
 
 @font-face {
     font-family: nkyn;
     src: url('/fonts/Nickainley-Normal.ttf');
 }
 
+/* Inconsolata-Regular-2 */
+/*  Hack-Regular-4 */
+/* UbuntuMono-R-12 */
+/* SFMono-Regular-10 */
 @font-face {
-    font-family: fcl-font;
-    src: url('/fonts/FiraCode-Light.ttf');
+    font-family: codeFont;
+    src: url('/fonts/UbuntuMono-R-12.ttf');
 }
 
+/* Futura-Light-3 */
+/* Allegro-2 */
+/* novah-font-2 */
+/* Open-Sans-2 */
+/* Rosseta-3 */
+/* Simpel-Medium-2 */
+/* Techna-Sans-Regular-2 */
+/*  */
 @font-face {
-    font-family: oss-bold;
-    src: url('/fonts/OstrichSans-Bold.otf');
+    font-family: mainFont;
+    src: url('/fonts/Open-Sans-2.ttf');
 }
+
+
 
 html {
-    /* font-family: fcl-font; */
+    font-family:  mainFont;
     /* font-size: 12pt; */
-    /* font-weight: 300; */
+    font-weight: 300;
 }
 
 
@@ -42,10 +44,10 @@ html {
 }
 
 code {
-    font-family: fcl-font;
+    font-family: codeFont;
 }
 
 html pre code span {
-    font-family: fcl-font;
+    font-family: codeFont;
     font-size: 10pt;
 }
