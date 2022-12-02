@@ -36,12 +36,12 @@
 #   url = "https://github.com/WUYUEZONG"
 #   weight = 50
 
-# [[main]]
-#   identifier = "apple"
-#   pre = "apple"
-#   pageRef = "ios"
-#   # url = "https://twitter.com/burufugu"
-#   weight = 60
+[[main]]
+  identifier = "circle-info"
+  pre = "circle-info"
+  pageRef = "about"
+  # url = "https://twitter.com/burufugu"
+  weight = 60
 
 
 # -- Footer Menu --
@@ -49,31 +49,38 @@
 # the copyright notice. Configure as per the main menu above.
 
  [[footer]]
-   name = "Tags"
+   name = "标签"
    pageRef = "tags"
    weight = 10
 
- [[footer]]
-   name = "Works"
-   pageRef = "works"
-   weight = 20
-
- [[footer]]
-  name = "Apps"
-  pageRef = "apps"
-  weight = 30
-
- [[footer]]
-  name = "Posts"
+[[footer]]
+  name = "博客"
   pageRef = "posts"
-  weight = 40
+  weight = 20
 
  [[footer]]
-  name = "iOS"
-  pageRef = "ios"
-  weight = 50
+   name = "工作"
+   pageRef = "works"
+   weight = 40
+
+#  [[footer]]
+#   name = "Apps"
+#   pageRef = "apps"
+#   weight = 30
+
+
+
+#  [[footer]]
+#   name = "iOS"
+#   pageRef = "ios"
+#   weight = 50
 
  [[footer]]
-  name = "Study"
+  name = "学习"
   pageRef = "study"
   weight = 60
+
+#  [[footer]]
+#   name = "关于"
+#   pageRef = "about"
+#   weight = 70

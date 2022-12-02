@@ -1,5 +1,5 @@
 ---
-title: "Study"
+title: "学习"
 # description: ""
 date: 2022-11-23T15:27:39+08:00
 draft: false
@@ -7,9 +7,11 @@ draft: false
 # series: []
 # series_order: 1
 
-# summary: ""
+summary: "学习相关资料整理～"
 ---
 
-关于[数据结构]({{< ref "data-structure" >}})
+- [APP]({{< ref "apps" >}})  
+- [IOS]({{< ref "ios" >}})  
+- [数据结构]({{< ref "data-structure" >}})
+- [React Native]({{< ref "rn" >}})
 
-关于[IOS]({{< ref "ios" >}})

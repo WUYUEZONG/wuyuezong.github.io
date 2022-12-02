@@ -3,7 +3,7 @@ title: "简历2022"
 date: 2022-11-13
 
 # showDate : false
-tags: ['WorkNote', 'Resume']
+tags: ['Resume']
 
 ---
 

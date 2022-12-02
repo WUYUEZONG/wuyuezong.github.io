@@ -22,7 +22,7 @@ mainSections = ["posts"]
   showMenu = true
   showCopyright = true
   showThemeAttribution = true
-  showAppearanceSwitcher = true
+  showAppearanceSwitcher = false
   showScrollToTop = true
 
 [homepage]
@@ -32,7 +32,7 @@ mainSections = ["posts"]
   showRecentItems = 10
   showMoreLink = false
   showMoreLinkDest = "posts"
-  cardView = true
+  cardView = false
   cardViewScreenWidth = false
   layoutBackgroundBlur = false # only used when layout equals background
 
