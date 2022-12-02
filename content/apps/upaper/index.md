@@ -1,9 +1,9 @@
 ---
 title: "Upaper: 高清壁纸"
 date: 2022-11-13T20:55:37+01:00
-description: "方便简单的找到一个壁纸～"
+description: "方便简单的找到一张壁纸～"
 
-summary: "方便简单的找到一个壁纸～"
+summary: "方便简单的找到一张壁纸～"
 
 tags: ["Upaper", "app"]
 # series: ["App"]

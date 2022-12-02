@@ -55,3 +55,7 @@ html pre code span {
     font-family: codeFont;
     font-size: 10pt;
 }
+
+html blockquote {
+    font-size: 0.86rem;
+}

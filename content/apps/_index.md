@@ -11,10 +11,11 @@ summary: "这里会展示我自己应用的相关信息"
 # showTableOfContents : true
 # showTaxonomies : true 
 # showWordCount : false
-# showSummary : false
+# showSummary: true
 cascade:
     showDate: true
     sharingLinks : false
+    showSummary: true
 
 # invertPagination: true
 # cascade:

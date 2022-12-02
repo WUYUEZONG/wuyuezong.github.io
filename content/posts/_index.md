@@ -14,7 +14,10 @@ draft: false
 # showWordCount : false
 # showSummary : false
 # sharingLinks : false
+showCards: false
+cardView: false
 cascade:
     showDate : true
+    showSummary : true
 ---
 
