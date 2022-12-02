@@ -11,12 +11,14 @@ autoSwitchAppearance = false
 
 enableSearch = false
 enableCodeCopy = true
+showAboutIcon = true
+showHeadList = false # 导航栏面包屑
 
 mainSections = ["posts"]
 # robots = ""
 
 [header]
-  layout = "basic" # valid options: basic, fixed
+  layout = "custom" # valid options: basic, fixed, custom
 
 [footer]
   showMenu = true
@@ -45,7 +47,7 @@ mainSections = ["posts"]
   showHero = true
   heroStyle = "background" # valid options: basic, big, background
   layoutBackgroundBlur = false # only used when heroStyle equals background
-  showBreadcrumbs = false
+  showBreadcrumbs = true # 路径栏
   showDraftLabel = true
   showEdit = false
   editURL = ""
@@ -65,7 +67,7 @@ mainSections = ["posts"]
 [list]
   showHero = true
   heroStyle = "background" # valid options: basic, big, background
-  showBreadcrumbs = false
+  showBreadcrumbs = true # 路径栏
   showSummary = false
   showViews = false
   showLikes = false

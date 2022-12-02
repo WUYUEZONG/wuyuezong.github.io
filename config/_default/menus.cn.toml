@@ -36,12 +36,12 @@
 #   url = "https://github.com/WUYUEZONG"
 #   weight = 50
 
-[[main]]
-  identifier = "circle-info"
-  pre = "circle-info"
-  pageRef = "about"
-  # url = "https://twitter.com/burufugu"
-  weight = 60
+# [[main]]
+#   identifier = "circle-info"
+#   pre = "circle-info"
+#   pageRef = "about"
+#   # url = "https://twitter.com/burufugu"
+#   weight = 60
 
 
 # -- Footer Menu --
