@@ -9,6 +9,11 @@ draft: false
 
 summary: "简单的增强你的妙控鼠标、触控板，使它们更好用"
 ---
+
+**交流**  
+QQ群：[470741842]()  
+[Telgram](https://t.me/magicgesture)
+
 # 窗口手势
 
 如果您使用妙控鼠标，您可以通过一根手指，在窗口的标题栏操作以达到对应的效果
@@ -83,6 +88,11 @@ summary: "简单的增强你的妙控鼠标、触控板，使它们更好用"
 [邮件@WUYUEZONG](mailto:w.yzong@outlook.com)  
 [BUGs反馈 - GitHub](https://github.com/WUYUEZONG/MagicGesturePackage/issues)  
 [BUGs反馈 - Gitee](https://gitee.com/rn-wyz/MagicGesturePackage/issues)
+
+**交流**  
+QQ群：[470741842]()  
+[Telgram](https://t.me/magicgesture)
+
 
 ## 捐赠
 

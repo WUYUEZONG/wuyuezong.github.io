@@ -29,7 +29,7 @@ summary: "关于这个网站，关于我，一些要说明的事。"
 
 ## 致谢
 **字体**  
-[仓耳金楷04-W02](http://tsanger.cn/product/41) ｜ 所有的正文及标题字体  
+[仓耳今楷04-W02](http://tsanger.cn/product/41) ｜ 所有的正文及标题字体  
 [Nickainley-Normal](https://www.dafont.com/nickainley.font) ｜ 我的签名  
 [UbuntuMono](https://design.ubuntu.com/font/) ｜ 代码字体  
 
