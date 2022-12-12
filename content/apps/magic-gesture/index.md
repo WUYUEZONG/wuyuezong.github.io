@@ -18,9 +18,10 @@ QQ【Mac窗口手势交流群】：[470741842](https://jq.qq.com/?_wv=1027&k=O8F
 
 如果您使用妙控鼠标，您可以通过一根手指，在窗口的标题栏操作以达到对应的效果
 
-下载  
-[Gitee - Magic-Ges-Lite.app](https://gitee.com/rn-wyz/MagicGesturePackage/archive/refs/tags/1.0.zip)  
-[GitHub - Magic-Ges-Lite.app](https://github.com/WUYUEZONG/MagicGesturePackage/archive/refs/tags/1.0.zip)
+## 下载  
+
+- [Gitee - Magic-Ges-Lite.app](https://gitee.com/rn-wyz/MagicGesturePackage/releases/download/1.0/Magic-Ges-Lite.dmg)  
+- [GitHub - Magic-Ges-Lite.app](https://github.com/WUYUEZONG/MagicGesturePackage/releases/download/1.0/Magic-Ges-Lite.dmg)
 
 ## 安装
 
@@ -101,6 +102,3 @@ QQ【Mac窗口手势交流群】：[470741842](https://jq.qq.com/?_wv=1027&k=O8F
 <img src="5.png" style="width: 208pt; border-radius: 3pt;"/>
 <img src="zfb.jpeg" style="width: 208pt; border-radius: 3pt;"/>
 
-下载  
-[Gitee - Magic-Ges-Lite.app](https://gitee.com/rn-wyz/MagicGesturePackage/archive/refs/tags/1.0.zip)  
-[GitHub - Magic-Ges-Lite.app](https://github.com/WUYUEZONG/MagicGesturePackage/archive/refs/tags/1.0.zip)
