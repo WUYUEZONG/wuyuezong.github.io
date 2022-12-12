@@ -9,14 +9,20 @@ draft: false
 
 summary: "简单的增强你的妙控鼠标、触控板，使它们更好用"
 ---
+# 窗口手势
+
+如果您使用妙控鼠标，您可以通过一根手指，在窗口的标题栏操作以达到对应的效果
 
 下载  
 [Gitee - Magic-Ges-Lite.app](https://gitee.com/rn-wyz/MagicGesturePackage/archive/refs/tags/1.0.zip)  
 [GitHub - Magic-Ges-Lite.app](https://github.com/WUYUEZONG/MagicGesturePackage/archive/refs/tags/1.0.zip)
 
-## 窗口手势
+## 安装
 
-如果您使用妙控鼠标，您可以通过一根手指，在窗口的标题栏操作以达到对应的效果
+将下载的文件夹中**Magic-Ges-Lite.app**文件拖动到**应用程序**文件夹即可完成安装
+![](2.png)
+
+
 
 
 ## 开启辅助功能
@@ -58,6 +64,11 @@ summary: "简单的增强你的妙控鼠标、触控板，使它们更好用"
 - 当鼠标悬停于窗口顶部，向上滑动并保持一定时间松开，将触发点按全屏按钮，在窗口全屏时则退出全屏
 - 当鼠标悬停于窗口顶部，向左滑动并保持一定时间松开，窗口占屏幕左边7/8
 - 当鼠标悬停于窗口顶部，向右滑动并保持一定时间松开，窗口占屏幕右边7/8
+
+## 停止或退出应用
+
+您可以在状态栏找到如下图标进行控制。
+![](1.png)
 
 ## 关于
 
