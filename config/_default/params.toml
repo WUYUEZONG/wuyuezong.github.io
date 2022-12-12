@@ -14,7 +14,7 @@ enableCodeCopy = true
 showAboutIcon = true
 showHeadList = false # 导航栏面包屑
 
-mainSections = ["posts"]
+mainSections = ["apps"]
 # robots = ""
 
 [header]

@@ -10,6 +10,10 @@ draft: false
 summary: "简单的增强你的妙控鼠标、触控板，使它们更好用"
 ---
 
+下载  
+[Gitee - Magic-Ges-Lite.app](https://gitee.com/rn-wyz/MagicGesturePackage/archive/refs/tags/1.0.zip)  
+[GitHub - Magic-Ges-Lite.app](https://github.com/WUYUEZONG/MagicGesturePackage/archive/refs/tags/1.0.zip)
+
 ## 窗口手势
 
 如果您使用妙控鼠标，您可以通过一根手指，在窗口的标题栏操作以达到对应的效果
@@ -76,3 +80,6 @@ summary: "简单的增强你的妙控鼠标、触控板，使它们更好用"
 <img src="5.png" style="width: 208pt; border-radius: 3pt;"/>
 <img src="zfb.jpeg" style="width: 208pt; border-radius: 3pt;"/>
 
+下载  
+[Gitee - Magic-Ges-Lite.app](https://gitee.com/rn-wyz/MagicGesturePackage/archive/refs/tags/1.0.zip)  
+[GitHub - Magic-Ges-Lite.app](https://github.com/WUYUEZONG/MagicGesturePackage/archive/refs/tags/1.0.zip)
