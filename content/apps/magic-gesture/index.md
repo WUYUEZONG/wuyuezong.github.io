@@ -11,7 +11,7 @@ summary: "简单的增强你的妙控鼠标、触控板，使它们更好用"
 ---
 
 **交流**  
-QQ群：[470741842]()  
+QQ【Mac窗口手势交流群】：[470741842](https://jq.qq.com/?_wv=1027&k=O8Fs7s3p)  
 [Telgram](https://t.me/magicgesture)
 
 # 窗口手势
@@ -90,7 +90,7 @@ QQ群：[470741842]()
 [BUGs反馈 - Gitee](https://gitee.com/rn-wyz/MagicGesturePackage/issues)
 
 **交流**  
-QQ群：[470741842]()  
+QQ【Mac窗口手势交流群】：[470741842](https://jq.qq.com/?_wv=1027&k=O8Fs7s3p)  
 [Telgram](https://t.me/magicgesture)
 
 
