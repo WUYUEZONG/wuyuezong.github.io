@@ -21,9 +21,9 @@ QQ【Mac窗口手势交流群】：[470741842](https://jq.qq.com/?_wv=1027&k=O8F
 
 ## 下载  
 
-- [去123云盘下载](https://www.123pan.com/s/817UVv-geU3A)
-- [去Gitee下载](https://gitee.com/rn-wyz/MagicGesturePackage/releases/download/1.0/Magic-Ges-Lite.dmg)  
-- [去GitHub下载](https://github.com/WUYUEZONG/MagicGesturePackage/releases/download/1.0/Magic-Ges-Lite.dmg)
+- [去123云盘下载](https://www.123pan.com/s/817UVv-2eU3A)
+- [去Gitee下载](https://gitee.com/rn-wyz/MagicGesturePackage/releases/download/1.0.1/Magic-Ges-Lite.dmg)  
+- [去GitHub下载](https://github.com/WUYUEZONG/MagicGesturePackage/releases/download/1.0.1/Magic-Ges-Lite.dmg)
 
 
 ## 安装
@@ -108,4 +108,14 @@ QQ【Mac窗口手势交流群】：[470741842](https://jq.qq.com/?_wv=1027&k=O8F
 
 <img src="5.png" style="width: 208pt; border-radius: 3pt;"/>
 <img src="zfb.jpeg" style="width: 208pt; border-radius: 3pt;"/>
+
+## 更新
+### 1.0.1
+2022-12-13
+
+修复已知BUG
+### 1.0
+2022-12-12
+
+第一个版本发布
 
