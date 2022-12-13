@@ -14,21 +14,28 @@ summary: "简单的增强你的妙控鼠标、触控板，使它们更好用"
 QQ【Mac窗口手势交流群】：[470741842](https://jq.qq.com/?_wv=1027&k=O8Fs7s3p)  
 [Telgram](https://t.me/magicgesture)
 
+
 # 窗口手势
 
 如果您使用妙控鼠标，您可以通过一根手指（触控板则是双指），在窗口的标题栏操作以达到对应的效果。但是所有手势对本应用无效，原因是本应用不是一个可激活窗口，不会占用您的顶部菜单栏，当你点击窗口以外区域，应用窗口会自动消失。
 
 ## 下载  
 
-- [Gitee - Magic-Ges-Lite.app](https://gitee.com/rn-wyz/MagicGesturePackage/releases/download/1.0/Magic-Ges-Lite.dmg)  
-- [GitHub - Magic-Ges-Lite.app](https://github.com/WUYUEZONG/MagicGesturePackage/releases/download/1.0/Magic-Ges-Lite.dmg)
+- [去123云盘下载](https://www.123pan.com/s/817UVv-geU3A)
+- [去Gitee下载](https://gitee.com/rn-wyz/MagicGesturePackage/releases/download/1.0/Magic-Ges-Lite.dmg)  
+- [去GitHub下载](https://github.com/WUYUEZONG/MagicGesturePackage/releases/download/1.0/Magic-Ges-Lite.dmg)
+
 
 ## 安装
 
 将下载的文件夹中**Magic-Ges-Lite.app**文件拖动到**应用程序**文件夹即可完成安装
 ![](2.png)
 
+**如果您遇到“无法打开”？**
+![](3.png)
 
+去：**设置 --- 隐私与安全性 --- 仍要打开** 就可以继续使用了。
+![](4.png)
 
 
 ## 开启辅助功能
