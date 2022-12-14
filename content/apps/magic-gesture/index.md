@@ -110,6 +110,14 @@ QQ【Mac窗口手势交流群】：[470741842](https://jq.qq.com/?_wv=1027&k=O8F
 <img src="zfb.jpeg" style="width: 208pt; border-radius: 3pt;"/>
 
 ## 更新
+### 1.0.2 预发布
+2022-12-14
+
+- 修复退出全屏残影问题；
+- 操作提示HUD添加可选项；
+![](update/0.png)
+- 更精准找到对应窗口
+
 ### 1.0.1
 2022-12-13
 
