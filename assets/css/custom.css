@@ -14,27 +14,30 @@
     src: url('/fonts/UbuntuMono-R-12.ttf');
 }
 
-/* Futura-Light-3 */
-/* Allegro-2 */
-/* novah-font-2 */
-/* Open-Sans-2 */
-/* Rosseta-3 */
-/* Simpel-Medium-2 */
-/* Techna-Sans-Regular-2 */
-@font-face {
-    font-family: mainEnFont;
-    src: url('/fonts/Open-Sans-2.ttf');
-}
+
 
 @font-face {
     font-family: mainFont;
     src: url('/fonts/cejk0402.ttf');
 }
 
+@font-face {
+    font-family: "cejk0402";
+    src: url('/fonts/cejk0402.ttf');
+    src: url("/fonts/cejk0402.eot"); /* IE9 */
+    src: url("/fonts/cejk0402.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    
+    url("/fonts/cejk0402.woff") format("woff"), /* chrome、firefox */
+    url("/fonts/cejk0402.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    
+    url("/fonts/cejk0402.svg#cejk0402") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
 
 
 html {
-    font-family:  mainFont;
+    font-family:  "cejk0402";
     /* font-size: 12pt; */
     /* font-weight: 300; */
 }
