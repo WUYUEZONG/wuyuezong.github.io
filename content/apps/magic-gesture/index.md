@@ -86,10 +86,11 @@ QQ【Mac窗口手势交流群】：[470741842](https://jq.qq.com/?_wv=1027&k=O8F
 ## 关于
 
 **项目地址**  
-[GitHub](https://github.com/WUYUEZONG/MagicGesturePackage)  
-[Gitee](https://gitee.com/rn-wyz/MagicGesturePackage)
+[GitHub项目代码](https://github.com/WUYUEZONG/Magic-Ges-Lite)  
+[GitHub包文件](https://github.com/WUYUEZONG/MagicGesturePackage)  
+[Gitee包文件](https://gitee.com/rn-wyz/MagicGesturePackage)
 
-> 代码尚未开源，也没有做好准备，暂且提供安装包供喜欢的人使用。
+ ~代码尚未开源，也没有做好准备，暂且提供安装包供喜欢的人使用。~
 
 **联系我**  
 [GitHub@WUYUEZONG](https://github.com/WUYUEZONG)  
